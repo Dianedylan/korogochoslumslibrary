@@ -2,40 +2,70 @@
 
     <div class="nav-header">
         <div class="col-md-3 logodiv">
-            <img class="logoimg" src="../../assets/kamenjukochlogowithgradientleaves1.png" style="height: 150px;">
+            <img class="logoimg" src="../../assets/kamenjukochlogowithgradientleaves1.png" style="height: 100px;">
             <h1 id="fh5co-logo"><a>Korogocho Community Library</a></h1>
         </div>
           
-        <nav id="menu-wrap" role="navigation" class="col-md-7">
+        <nav id="menu-wrap" role="navigation" class="col-md-9">
             <ul class="sf-menu" id="fh5co-primary-menu">
                 <li class="active">
                     <a href="index.html">About Us</a>
                 </li>
+
+                <li class="menu">
+                    <a [matMenuTriggerFor]="subMenu"> What We Do</a>
+                    <mat-menu #subMenu="matMenu">
+                        <!-- <a>What We Do</a> -->
+                        <!-- <ul> -->
+                            <button mat-menu-item>Provision of Library material</button>
+                            <button mat-menu-item>fees Donations</button>
+                            <button mat-menu-item>Food/Cloth Donations</button>
+                          
+                        <!-- </ul> -->
+                    </mat-menu>
+                </li>
+
+                <li class="menu">
+                    <a [matMenuTriggerFor]="subMenu2"> Get Involved</a>
+                    <mat-menu #subMenu2="matMenu">
+
+                            <button mat-menu-item>Donate Now</button>
+                            <button mat-menu-item>Volunteer</button>
+                            <button mat-menu-item>Fundraise</button>
+                          
+                    </mat-menu>
+                </li>
+                
             
-                <li>
-                    <a href="#" class="sub-ddown">What We Do</a>
-                    <ul class="sub-menu">
+                <!-- <li>
+                    <a href="#" class="sub-down" (mouseenter)="showSubMenu()" (mouseleave)="hideSubMenu()">What We Do</a>
+                    <ul class="sub-menu" [ngClass]="{'show': isSubMenuVisible}">
                         <li><a href="#">Water World</a></li>
                         <li><a href="#">Cloth Giving</a></li>
                         <li><a href="#">Edu Mission</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#" class="sub-down">Get Involved</a>
-                    <ul class="sub-menu">
+                </li> -->
+                <!-- <li>
+                    <a href="#" class="sub-down" (mouseenter)="showSubMenu()" (mouseleave)="hideSubMenu()">Get Involved</a>
+                    <ul class="sub-menu" [ngClass]="{'show': isSubMenuVisible}">
                         <li><a href="#">Donate</a></li>
                         <li><a href="#">Fundraise</a></li>
                         <li><a href="#">Campaign</a></li>
                         <li><a href="#">Philantrophy</a></li>
                         <li><a href="#">Volunteer</a></li>
                     </ul>
-                </li>
+                </li> -->
 
 
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a class="" href="#">Donate Now</a></li>
+                
             </ul>
+
+            
         </nav>
     </div>
 
 </div>
+

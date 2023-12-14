@@ -1,0 +1,56 @@
+<div class="container">
+    <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
+      <slide *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Slide {{ i + 1 }}">
+      </slide>
+    </carousel>
+  
+    <!-- <div class="dots">
+      <span
+        *ngFor="let image of images; let i = index"
+        [class.active]="i === activeSlideIndex"
+        (click)="selectSlide(i)"
+      ></span>
+    </div> -->
+
+
+    <mat-card>
+        <mat-card-content>
+            <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+                <div fxFlex="" class="flexalign">
+                   <span  style="height: 100px;" class="material-icons hicon">description</span>
+                   <div>
+                    <p>Participate</p>
+                   <h4>As a Volunteer</h4>
+                   </div>
+                </div>
+                <div fxFlex=""  class="flexalign">
+                    <span  style="height: 100px;" class="material-icons hicon">money</span>
+                    <div>
+                        <p>Be a Hand</p>
+                       <h4>As a Donor</h4>
+                       </div>                </div>
+                <div fxFlex=""  class="flexalign">
+                    <span  style="height: 100px;" class="material-icons hicon">description</span>
+                    <div>
+                        <p>Participate</p>
+                       <h4>As a Sponsor</h4>
+                    </div>                
+                </div>
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+    <mat-card>
+        <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+            <div fxFlex="" class="flexalign">
+                
+            </div>
+        </div>
+    </mat-card>
+</div>
+
+
+
+    
+  

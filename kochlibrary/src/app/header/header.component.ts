@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  isSubMenuVisible = false;
 
+  showSubMenu() {
+    this.isSubMenuVisible = true;
+  }
+
+  hideSubMenu() {
+    this.isSubMenuVisible = false;
+  }
+
+  
 }
