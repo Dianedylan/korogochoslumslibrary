@@ -9,6 +9,7 @@
 }
 img{
     width: 100%;
+    margin: 50px 0;
   
 }
 .container-xl, .container-lg, .container-md, .container-sm, .container {
@@ -17,7 +18,7 @@ img{
 
 .dots {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
   }
   
   .dots span {
@@ -46,14 +47,41 @@ img{
   }
 
   .material-icons {
-    font-size: 100px;
+    font-size: 120px;
     color: #b29e1c;
   }
 
   .flexalign{
+    height: 200px;
     display: inline-flex;
     text-align: start;
     align-items: center;
     background-color: rgb(210, 227, 227);
+  }
+  .cardcontainer{
+    text-align: center;
+    height: 300px;
+  }
+  .overlazparagraphs{
+    margin: 50px 250px;
+    text-align: start;
+
+  }
+  h1{
+    margin-top: 50px;
+  }
+  p{
+    font-size: large;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: rgb(19, 17, 17); /* Text color */
+    font-size: 46px; /* Adjust the font size as needed */
+    font-weight: bold;
+    text-align: center;
   }
   

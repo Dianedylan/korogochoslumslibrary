@@ -2,16 +2,20 @@
     <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
       <slide *ngFor="let image of images; let i = index">
         <img [src]="image" alt="Slide {{ i + 1 }}">
+        <!-- <div class="overlay-text">        
+            <p> Join Our Friendly Community</p>
+        </div> -->
+
       </slide>
     </carousel>
   
-    <!-- <div class="dots">
+    <div class="dots">
       <span
         *ngFor="let image of images; let i = index"
         [class.active]="i === activeSlideIndex"
         (click)="selectSlide(i)"
       ></span>
-    </div> -->
+    </div>
 
 
     <mat-card>
@@ -41,10 +45,18 @@
         </mat-card-content>
 
     </mat-card>
-    <mat-card>
+    <mat-card class="card ">
+        <div class="cardcontainer">
+            <h1>Changing lives, book by book</h1>
+            <p class="overlazparagraphs">Korogocho Slums Community Library was put up to offer an escape for vulnerable minors in the rough neighborhood, where many are subjected to different kinds of hard labor, helping their parents work and eventually ending up not fulfulling their lives aacademically. It is our aim to fight to defend their future and that of our community at large.
+
+                Let's change the world, one child at a time.</p>
+        </div>
+       
+
         <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
-            <div fxFlex="" class="flexalign">
-                
+            <div fxFlex="" class="">
+                <img src="../../assets/book.jpg" style="height: 60%;">
             </div>
         </div>
     </mat-card>
