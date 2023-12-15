@@ -76,12 +76,69 @@ img{
 
   .overlay-text {
     position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-60%, -60%);
+    color: #5c5907;
+    font-size: 46px;
+    text-align: start;
+  }
+  .overlay-txt {
+    position: absolute;
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
-    color: rgb(19, 17, 17); /* Text color */
-    font-size: 46px; /* Adjust the font size as needed */
-    font-weight: bold;
-    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    text-align: start;
   }
-  
+  .overlay-txts {
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    text-align: start;
+  }
+   .accordion-card p{
+    font-size: 16px;
+    margin: 0 20px;
+  }
+  .Piclayout{
+    height: 50%;
+  }
+  .card{
+
+  }
+  .accordion-card{
+   margin: 0px 0px;
+   height: 40%;
+   h5{
+    margin: 0px 3%;
+   }
+  }
+  mat-expansion-panel{
+    background-color: orange;
+  }
+  mat-radio-button {
+    font-size: smaller;
+  }
+
+ .hide-arrows .carousel-control-prev-icon, 
+ .hide-arrows .carousel-control-next-icon {
+    display: none;
+    visibility: hidden;
+}
+
+ 
+  .gametext{
+    height: 80px; 
+    background-color: rgb(232, 236, 239);
+    margin: 10px 10px;
+    text-align: start;
+    p{
+        margin-top: 30px;
+    }
+    // width: 60%;
+  }

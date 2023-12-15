@@ -1,10 +1,11 @@
 <div class="container">
     <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
       <slide *ngFor="let image of images; let i = index">
-        <img [src]="image" alt="Slide {{ i + 1 }}">
-        <!-- <div class="overlay-text">        
-            <p> Join Our Friendly Community</p>
-        </div> -->
+        <div>
+            <img [src]="image.path" alt="Slide {{ i + 1 }}">
+            <h2 class="overlay-text">{{image.text}}</h2>
+            <p class="overlay-txt">{{image.parag}}</p>
+        </div>  
 
       </slide>
     </carousel>
@@ -45,21 +46,73 @@
         </mat-card-content>
 
     </mat-card>
-    <mat-card class="card ">
+    <!-- <mat-card class="card "> -->
         <div class="cardcontainer">
             <h1>Changing lives, book by book</h1>
-            <p class="overlazparagraphs">Korogocho Slums Community Library was put up to offer an escape for vulnerable minors in the rough neighborhood, where many are subjected to different kinds of hard labor, helping their parents work and eventually ending up not fulfulling their lives aacademically. It is our aim to fight to defend their future and that of our community at large.
+            <p class="overlazparagraphs">Korogocho Slums Community Library was put up to offer an escape for vulnerable minors in the rough neighborhood, where many are subjected to different kinds of hard labor, helping their parents work and eventually ending up not fulfulling their lives academically. It is our aim to fight to defend their future and that of our community at large.
 
                 Let's change the world, one child at a time.</p>
         </div>
        
+    <!-- </mat-card> -->
 
-        <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
-            <div fxFlex="" class="">
-                <img src="../../assets/book.jpg" style="height: 60%;">
-            </div>
+    <div class="Piclayout" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+        <div fxFlex="" class="">
+            <img src="../../assets/book.jpg" style="height: 100%;">
+            <p class="overlay-txts">Create a legacy of Literacy with us</p>
         </div>
-    </mat-card>
+    </div>
+
+    <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+        <div fxFlex="70" class="">
+            <mat-accordion class="game_accordion">
+                <mat-expansion-panel class="" [expanded]=true >
+                  <mat-expansion-panel-header class="details_accordion_header">
+                    <mat-panel-title>
+                      <h2 style="color: #fff;">Game</h2>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-divider></mat-divider>
+                  
+                  <mat-card class="accordion-card">
+                   
+                    <div class="row">
+                        
+                        <div class="col-md-8">
+                            <h5 class="">Helping others</h5>
+                            <p>Read the fact file. Are the sentences true or false?</p></div>
+                        <div class="col-md-4 " style="margin-top: 20px;"><mat-progress-bar mode="determinate" [value]="calculateProgress()"></mat-progress-bar></div>
+                    </div>
+
+                    <carousel [ngClass]="{'hide-arrows': hideArrows}">
+                    <slide *ngFor="let q of quiz">
+                        <div class="row gametext">
+                        <p class="col-md-8">{{q.que}}</p>
+                        <mat-radio-group aria-label="Select an option" class="col-md-3"  (change)="userAnsweredCorrectly($event.value)" style="margin-top: 2%;">
+                            <mat-radio-button value="1">True</mat-radio-button>
+                            <mat-radio-button value="2">False</mat-radio-button>
+                        </mat-radio-group>
+                        </div>
+                    </slide>
+                    </carousel>
+              
+                    <div>
+                        <button mat-raised-button (click)="finishQuiz()">Finish</button>
+                        <button mat-raised-button  (click)="tryAgain()">Try again</button>
+                    </div>
+                    
+                 </mat-card>
+
+                </mat-expansion-panel>
+              </mat-accordion>  
+        </div>
+        <div fxFlex="" class="flexalign">
+            
+        </div>
+    </div>
+
+
+
 </div>
 
 

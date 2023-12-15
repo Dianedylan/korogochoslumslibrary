@@ -13,12 +13,17 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AnswerdialogComponent } from './answerdialog/answerdialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    AnswerdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatProgressBarModule,
     FlexLayoutModule,
     MatMenuModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatDialogModule,
     CarouselModule.forRoot()
   ],
   providers: [],
