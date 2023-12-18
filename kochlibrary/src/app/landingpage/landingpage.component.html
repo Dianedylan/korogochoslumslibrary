@@ -1,9 +1,9 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <div class="container">
     <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
       <slide *ngFor="let image of images; let i = index">
         <div>
-            <img [src]="image.path" alt="Slide {{ i + 1 }}">
+            <img [src]="image.path" alt="Slide {{ i + 1 }}" height="600px">
             <h2 class="overlay-text">{{image.text}}</h2>
             <p class="overlay-txt">{{image.parag}}</p>
         </div>  
@@ -117,8 +117,6 @@
             </mat-accordion>
         </div>
     </div>
-
-
 
 </div>
 

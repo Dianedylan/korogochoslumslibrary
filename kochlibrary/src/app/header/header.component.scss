@@ -28,7 +28,7 @@
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    color: #052725; /* Adjust the color as needed */
+    color: #052725;
     line-height: normal;
   }
   
@@ -60,7 +60,7 @@
   
   #fh5co-primary-menu a {
     text-decoration: none;
-    color: #073c2c; /* Adjust the color as needed */
+    color: #073c2c;
     font-weight: bold;
     font-size: 16px;
   }
@@ -129,4 +129,10 @@
   // .sub-menu.show {
   //   display: block;
   // }
- 
+
+  .active{
+    color: #fff;
+    background-color: #73c1cf;
+    border-radius: 5px;
+    padding: 5px;
+  }

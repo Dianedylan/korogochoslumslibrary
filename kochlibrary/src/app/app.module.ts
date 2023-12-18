@@ -22,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './navigation/about/about.component';
 import { ServicesComponent } from './navigation/services/services.component';
 import { RouterModule } from '@angular/router';
+import { InvolvementComponent } from './involvement/involvement.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { RouterModule } from '@angular/router';
     AnswerdialogComponent,
     FooterComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    InvolvementComponent
   ],
   imports: [
     BrowserModule,

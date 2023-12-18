@@ -1,3 +1,45 @@
-<!-- <app-header></app-header> -->
-<p>about works!</p>
+<div class="container">
+
+    <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
+        <slide *ngFor="let image of images; let i = index">
+          <div>
+              <img [src]="image.path" alt="Slide {{ i + 1 }}" height="600px">
+              <h2 class="overlay-text">{{image.text}}</h2>
+              <p class="overlay-txt">{{image.parag}}</p>
+          </div>  
+        </slide>
+      </carousel>
+      <mat-card class="backgroundfixed">
+        <mat-card-content>
+            <div class="">
+                <p class="overlazparagraphs">We have created a transformative space where children can escape the limitations of their circumstances, unlocking their potential and shaping a brighter future.</p>
+                <!-- <img src="../../../assets/kochflierbackground.png"> -->
+                <p class="overlazparagraphs">
+                    We believe that everyone can make a difference with their gift and influence those around them to do the same, by bearing witness and telling stories.We all have the power to make a difference and change the world.
+                </p>
+                <p class="overlazparagraphs">The library is planning to expand its outstanding educational and literacy services to meet the needs of our diverse and growing population. With your support, the Foundation can continue to assist with funding for important Library improvements.</p>
+            </div>
+
+            <div class="Piclayout" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+                
+            <div fxFlex="50" class="centeralignment">
+                <img src="../../../assets/boy2.jpg" height="400px">
+            </div>
+            <div fxFlex="50" class="centeralignment">
+                <mat-card style="height: 300px;">
+                    <p>
+                        Thank You for Helping Us Make History! We have seen firsthand the amazing things that can happen when our community comes together to give back! 
+                        We are thankful for the support that the Library Foundation has received during our Gives and look forward to sharing our stories of impact.
+                    </p>
+                   
+                </mat-card>
+            </div>
+            </div>
+        </mat-card-content>
+
+      </mat-card>
+
+
+</div>
+
 <!-- <app-footer></app-footer> -->

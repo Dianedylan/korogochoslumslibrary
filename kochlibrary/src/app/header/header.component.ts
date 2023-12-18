@@ -4,8 +4,15 @@ import { Route, RouterLink, Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  styles: [`
+    .active-link {
+      color: #fff; 
+      font-weight: bold;
+    }
+  `]
 })
+
 export class HeaderComponent {
   isSubMenuVisible = false;
 
@@ -16,6 +23,4 @@ export class HeaderComponent {
   hideSubMenu() {
     this.isSubMenuVisible = false;
   }
-
-  
 }

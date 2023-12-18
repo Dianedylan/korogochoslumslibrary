@@ -1,0 +1,63 @@
+@import "../../landingpage/landingpage.component.scss";
+
+.container{
+    // position: fixed;
+    // width: 100%;
+    // height: 100%;
+    // background: url('../../../assets/akinyiwithbook.jpg') center/cover no-repeat;
+    // z-index: 1;
+}
+.card{
+    // position: fixed;
+    // width: 100%;
+    // height: 60%;
+    // background: url('../../../assets/akinyiwithbook.jpg') center/cover no-repeat;
+    // z-index: 1;
+}
+
+.overlay-text{
+    top:15%;
+    left:45%;
+    transform: translate(-40%, -40%);
+    // color:rgb(22, 205, 221);
+    color: #052725;
+}
+.overlay-txt{
+    top: 25%;
+    left:45%;
+    transform: translate(-30%, -30%);
+    font-size: 36px;
+    color:rgb(113, 188, 185);
+    // color: rgb(153, 187, 186);
+    // color:cadetblue;
+}
+.Piclayout{
+    max-height: 500px;
+    // background:  url('../../../assets/') center/cover no-repeat;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        // height: 40%;
+        width: 60%;
+        margin: 10% 10% 10% 20%;
+        // height: 300px;
+    }
+  
+}
+.centeralignment{
+    text-align: center;
+    margin: 10% 0 0 0 ;
+    p{
+        margin-top: 15%;
+    }
+}
+.backgroundfixed{
+    // position: relative;
+    // width: 100%;
+    // height: 60%;
+    // background: url('../../../assets/akinyiwithbook.jpg') no-repeat center;
+    // z-index: 1;
+}
