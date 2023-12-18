@@ -8,17 +8,16 @@
           
         <nav id="menu-wrap" role="navigation" class="col-md-9">
             <ul class="sf-menu" id="fh5co-primary-menu">
-                <li class="active">
-                    <a href="index.html">About Us</a>
-                </li>
+                <!-- <li routerLinkActive="'active'"><a routerLink="/home">H</a></li> -->
+                <li routerLinkActive="active"><a routerLink="./about">About Us</a></li>
 
                 <li class="menu">
                     <a [matMenuTriggerFor]="subMenu"> What We Do</a>
                     <mat-menu #subMenu="matMenu">
                         <!-- <a>What We Do</a> -->
                         <!-- <ul> -->
-                            <button mat-menu-item>Provision of Library material</button>
-                            <button mat-menu-item>fees Donations</button>
+                            <button mat-menu-item routerLink="./whatwedo">Provision of Library material</button>
+                            <button mat-menu-item routerLink="./whatwedo">fees Donations</button>
                             <button mat-menu-item>Food/Cloth Donations</button>
                           
                         <!-- </ul> -->
@@ -57,15 +56,18 @@
                 </li> -->
 
 
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a class="" href="#">Donate Now</a></li>
+                <li><a routerLink="/home">Blog</a></li>
+                <li><a routerLink="/home">Contact</a></li>
+                <li><a class="" routerLink="/home">Donate Now</a></li>
                 
             </ul>
 
             
         </nav>
+        <!-- <router-outlet></router-outlet> -->
     </div>
 
 </div>
+
+
 

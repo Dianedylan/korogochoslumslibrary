@@ -1,0 +1,281 @@
+.page-footer {
+    padding-top: 0;
+    // background-color:rgb(16, 31, 63);
+    //background-color:rgb(7, 21, 51);
+    color: white;
+    // background-image: url("../../assets/img/midpageimage.png") no-repeat fixed center;
+    background:  linear-gradient(135deg,rgb(16, 31, 63, .8), rgb(16, 31, 63)100%),
+    url(../../assets/kamenjukochlogonavy.jpg) no-repeat fixed center;
+    background-size: cover;
+    // previously used ggradient :#35180b8c, #52281159
+  }
+  
+  .page-footer a {
+    color: white;
+  }
+  li{
+    padding-bottom: 10px;
+  }
+  #emailSubscribe {
+    background-color: #7a4d15;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  #email-div {
+    flex: 0 !important;
+  }
+  
+  #subscribe {
+    background-color: white;
+    color: #7a4d15;
+    border-radius: 0 5px 5px 0;
+    margin-top: 10px;
+    margin-left: 36px;
+    border: none;
+    height: 21px;
+  }
+  
+  input[id^="emailSubscribe"]::placeholder {
+    color: white;
+  
+  }
+  
+  #newsLetter {
+    font-size: 12px;
+  }
+  
+  .footer-contents {
+    font-size: 14px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+  
+  .footer_wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .form_field {
+    padding-right: 40px;
+  }
+  
+  
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+    a{
+      text-decoration: none;
+      cursor: pointer;
+      
+    }
+    .material-icons{
+      margin-top: 20px;
+    }
+  }
+  .footer_header {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  //on big screens
+  @media only screen and (min-width: 740px) {
+    #emailSubscribe {
+      background-color: #7a4d15;
+      color: white;
+      width: 178px;
+      margin-top: 10px;
+    }
+    .subscribe {
+      margin-left: 31px;
+    }
+    .footer_wrapper {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  .page-footer .footer-copyright {
+    // width: 100%;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: inline-flex;
+     -webkit-box-align: center;
+     -webkit-align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
+     -webkit-box-pack: justify;
+     -webkit-justify-content: space-between;
+     -ms-flex-pack: justify;
+     justify-content: space-between;
+    // padding: 10px 30px;
+    // color: rgba(24, 11, 11, 0.8);
+    //background-color: rgb(207, 169, 14) !important;
+    
+  
+     .footer-container{
+       justify-content: space-between;
+      //  justify-content:center;
+       width: 85%;
+       height: 60px;
+       background-color: rgb(223, 170, 8) !important;
+       color: rgba(24, 11, 11, 0.8);
+       display: inline-flex;
+       align-items: center;
+      //  background-color: rgb(255, 192, 0) !important;
+      padding: 0 0 0 30px;
+  
+      .social-icons .list-footer{
+        display: inline-flex;
+        margin-top: 0;
+        align-items: center;
+        justify-content: right;
+        padding-left: 300px ;
+        align-items: center;
+        li{
+          list-style: none;
+          
+        }
+        img{
+          height:20px;
+          padding-top: 25px;
+          
+        }
+      }
+      
+     }
+  }
+  .list-phone {
+    list-style-type: none;
+    margin: 5px 10px;
+  }
+  
+  .list-unstyled li{
+    display:flex-block;
+    i{
+      width: 40px;
+      display:inline;
+      font-size: 20px;
+      height: 10px;
+      line-height: 5px;
+    }
+  }
+  .logodiv{
+    padding-top: 50px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .year-div{
+      width: 100%;
+      margin-left: 0px;
+      
+    }
+   
+    .list-unstyled{
+      margin-right: 50px;
+    }
+    .list-unstyled li i{
+        width: 20px;
+        display:inline-block;
+    }
+    .links{
+      display: inline-flex;
+    }
+    .more{
+      display: none;
+    }
+    .page-footer {
+      background:  linear-gradient(135deg,rgba(19, 32, 61, 0.8), rgb(18, 32, 63)100%),
+    url(../../assets/kamenjukochlogonavy.jpg) no-repeat center;
+      background-size: 500px 810px;
+    .footer-copyright .footer-container{
+      align-items: center;
+      padding: 0 0 0 30px;
+      width: 90%;
+   }
+   }
+   
+  .page-footer  .footer-copyright .footer-container .social-icons  .list-footer{
+    display: inline-flex;
+    margin-top: 0;
+    align-items: center;
+    // justify-content: right;
+    padding-left: 0px; 
+  }
+  
+  }
+  
+  @media only screen and (max-width: 740px) {
+    .year-div{
+      width: 100%;
+      margin-left: 0px;
+    }
+    .list-unstyled{
+      margin-right: 50px;
+    }
+    .list-unstyled li i{
+        width: 20px;
+        display:inline-flex;
+    }
+  
+  }
+  @media only screen and (min-width: 601px) and (max-width:740px) {
+    .year-div{
+      width: 100%;
+      margin-left: 0px;
+    }
+    .list-unstyled{
+      margin-right: 50px;
+    }
+  }
+  
+  @media only screen and (min-width: 741px) and (max-width:992px) {
+    .year-div{
+      width: 100%;
+      margin-left: 0px;
+    }
+    .list-unstyled{
+      margin-right: 30px;
+    }
+    .list-unstyled li i{
+      width: 20px;
+      display:inline-block;
+  }
+  .footer_wrapper{
+    margin-left: 100px;
+  }
+  .footer-contents{
+    fxFlex:40px; 
+  }
+  
+  @media only screen and (max-width: 414px) {
+    .year-div{
+      width: 100%;
+      margin-left: 0px;
+    }
+    .list-unstyled{
+      margin-right: 50px;
+    }
+    .list-unstyled li i{
+        width: 20px;
+        display:inline-block;
+    }
+  
+    .social-icons .list-footer{
+      display: inline-block;
+      margin-top: 0;
+      align-items: center;
+      justify-content: right;
+      padding-left: 300px ;
+      align-items: center;
+    }
+  }
+  }
+  .logo-img{
+    height: 30px;
+  }
+
+  .copyrighttext{
+   margin-left: 40%;
+   font-size: 11px;
+  }

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
     <carousel [(activeSlide)]="activeSlideIndex" class="carousel">
       <slide *ngFor="let image of images; let i = index">
@@ -59,11 +60,13 @@
     <div class="Piclayout" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
         <div fxFlex="" class="">
             <img src="../../assets/book.jpg" style="height: 100%;">
-            <p class="overlay-txts">Create a legacy of Literacy with us</p>
+            <p class="overlay-txts larger">Creating a legacy of Literacy</p>
+            <p class="overlay-txts smaller">Korogocho Community Library is a transformative space where children can escape the limitations of their 
+                circumstances, unlocking their potential and shaping a brighter future.</p>
         </div>
     </div>
 
-    <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
+    <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill style="background-color: cadetblue;">
         <div fxFlex="70" class="">
             <mat-accordion class="game_accordion">
                 <mat-expansion-panel class="" [expanded]=true >
@@ -106,8 +109,12 @@
                 </mat-expansion-panel>
               </mat-accordion>  
         </div>
-        <div fxFlex="" class="flexalign">
-            
+        <div fxFlex="30" class="row">
+            <mat-accordion class="game_accordion">
+                <mat-expansion-panel class="" [expanded]=true >
+                    <img src="../../assets/kamenjukochlogonavy.jpg">
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
     </div>
 
