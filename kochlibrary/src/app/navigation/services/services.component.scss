@@ -1,0 +1,45 @@
+@import "../../landingpage/landingpage.component.scss";
+@import "../../navigation/about/about.component.scss";
+
+.backgroundfixed{
+    // margin-top: 10%;
+    background:  linear-gradient(135deg, #35180b8c, #52281159 100%),
+    url('../../../assets/libmaterial.jpg') no-repeat fixed center;
+    background-size: cover;
+    color: #fff !important;
+}
+.top{
+    margin-top: 15%;
+}
+.Piclayout{
+    background-color: transparent;
+}
+.card1 {
+    background-color: #2b8696;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    h5 a {
+        color: #fff;
+        text-decoration: none;
+      };
+        
+  p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+  }
+  
+  .card1:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  .card1 a:hover {
+    text-decoration: underline;
+  }
+  

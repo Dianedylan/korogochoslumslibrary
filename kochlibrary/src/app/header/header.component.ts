@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener} from '@angular/core';
 import { Route, RouterLink, Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,15 @@ import { Route, RouterLink, Router } from '@angular/router';
 })
 
 export class HeaderComponent {
+  
   isSubMenuVisible = false;
+  isScrolledUp = false;
+
+  
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.isScrolledUp = window.scrollY > 0;
+  }
 
   showSubMenu() {
     this.isSubMenuVisible = true;

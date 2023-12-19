@@ -22,9 +22,9 @@ export class LandingpageComponent {
   constructor(public dialog: MatDialog) {}
 
   images = [
-    {path:'../../assets/akinyiwithbook.jpg', text:'When in doubt Check a book out', parag: 'Helping others is a great thing to do. You can learn new things and have fun.'},
-    {path:'../../assets/backpack.jpg', text: 'Join Our Friendly Community', parag: ' Being of help makes you feel good too! How can you help today?'},
-    {path:'../../assets/backpack.jpg', text: 'No child labour in Korogocho', parag: 'A simple signature by you means the whole world to us'}
+    {path:'../../assets/akinyiwithbook.jpg', text:'', parag: 'A Haven for Dreamers, Thinkers, and Explorers. Where Stories Spark Smiles.'},
+    {path:'../../assets/backpack.jpg', text: 'Join Our Friendly Community', parag: 'Join Our Friendly Community'},
+    {path:'../../assets/backpack.jpg', text: '', parag: 'A simple signature by you means the whole world to us'}
   ];
 
   activeSlideIndex = 0;

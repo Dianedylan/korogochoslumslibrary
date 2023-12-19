@@ -1,22 +1,27 @@
 <div class="container">
 
-    <div class="nav-header">
+    <div class="nav-header"  [ngClass]="{'scrolled-up': isScrolledUp}">
         <div class="col-md-3 logodiv">
             <img class="logoimg" src="../../assets/kamenjukochlogowithgradientleaves1.png" style="height: 100px;">
             <h1 id="fh5co-logo"><a>Korogocho Community Library</a></h1>
         </div>
-          
-        <nav id="menu-wrap" role="navigation" class="col-md-9">
-            <ul class="sf-menu" id="fh5co-primary-menu">
+        
+        <nav id="menu-wrap" role="navigation" class="col-md-9"  [ngClass]="{'scrolled-up': isScrolledUp}">
+            <ul class="sf-menu" id="fh5co-primary-menu" [ngClass]="{'scrolled-up': isScrolledUp}">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="./home">Home</a></li>
-                <li routerLinkActive="active"><a routerLink="./about">About Us</a></li>
+                <li routerLinkActive="active"><a [matMenuTriggerFor]="aboutMenu" routerLink="./about">About Us</a>
+                    <mat-menu #aboutMenu="matMenu">
+                            <button mat-menu-item routerLink="./about">Board</button>
+                            <button mat-menu-item routerLink="./about">Contact</button>                          
+                    </mat-menu>
+                </li>
 
                 <li class="menu">
-                    <a [matMenuTriggerFor]="subMenu"> What We Do</a>
+                    <a [matMenuTriggerFor]="subMenu" routerLink="./whatwedo"> What We Do</a>
                     <mat-menu #subMenu="matMenu">
                         <!-- <a>What We Do</a> -->
                         <!-- <ul> -->
-                            <button mat-menu-item routerLink="./whatwedo">Provision of Library material</button>
+                            <button mat-menu-item routerLink="./whatwedo">Library material</button>
                             <button mat-menu-item routerLink="./whatwedo">fees Donations</button>
                             <button mat-menu-item>Food/Cloth Donations</button>
                           
