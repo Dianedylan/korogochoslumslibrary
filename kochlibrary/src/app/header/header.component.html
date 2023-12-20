@@ -14,7 +14,7 @@
                             <button mat-menu-item routerLink="./about">Board</button>
                             <button mat-menu-item routerLink="./about">Contact</button>                          
                     </mat-menu>
-                </li>
+                </li><i [matMenuTriggerFor]="aboutMenu" class="material-icons hicon">expand_more</i>
 
                 <li class="menu">
                     <a [matMenuTriggerFor]="subMenu" routerLink="./whatwedo"> What We Do</a>
@@ -27,49 +27,26 @@
                           
                         <!-- </ul> -->
                     </mat-menu>
-                </li>
+                </li><i [matMenuTriggerFor]="subMenu" class="material-icons hicon">expand_more</i>
+                  
 
                 <li class="menu">
-                    <a [matMenuTriggerFor]="subMenu2"> Get Involved</a>
+                    <a [matMenuTriggerFor]="subMenu2" routerLink="./whatyoucando"> Get Involved</a>
                     <mat-menu #subMenu2="matMenu">
 
-                            <button mat-menu-item>Donate Now</button>
-                            <button mat-menu-item>Volunteer</button>
-                            <button mat-menu-item>Fundraise</button>
+                            <button mat-menu-item routerLink="./donate">Donate Now</button>
+                            <button mat-menu-item routerLink="./volunteer">Volunteer</button>
+                            <button mat-menu-item routerLink="./programssponsorship">Fundraise</button>
                           
                     </mat-menu>
-                </li>
-                
-            
-                <!-- <li>
-                    <a href="#" class="sub-down" (mouseenter)="showSubMenu()" (mouseleave)="hideSubMenu()">What We Do</a>
-                    <ul class="sub-menu" [ngClass]="{'show': isSubMenuVisible}">
-                        <li><a href="#">Water World</a></li>
-                        <li><a href="#">Cloth Giving</a></li>
-                        <li><a href="#">Edu Mission</a></li>
-                    </ul>
-                </li> -->
-                <!-- <li>
-                    <a href="#" class="sub-down" (mouseenter)="showSubMenu()" (mouseleave)="hideSubMenu()">Get Involved</a>
-                    <ul class="sub-menu" [ngClass]="{'show': isSubMenuVisible}">
-                        <li><a href="#">Donate</a></li>
-                        <li><a href="#">Fundraise</a></li>
-                        <li><a href="#">Campaign</a></li>
-                        <li><a href="#">Philantrophy</a></li>
-                        <li><a href="#">Volunteer</a></li>
-                    </ul>
-                </li> -->
+                </li><i [matMenuTriggerFor]="subMenu2" class="material-icons hicon">expand_more</i>
 
-
-                <!-- <li><a routerLink="/home">Blog</a></li> -->
-                <li><a routerLink="/home">Contact</a></li>
                 <li><a class="" routerLink="/home">Donate Now</a></li>
                 
             </ul>
 
             
         </nav>
-        <!-- <router-outlet></router-outlet> -->
     </div>
 
 </div>

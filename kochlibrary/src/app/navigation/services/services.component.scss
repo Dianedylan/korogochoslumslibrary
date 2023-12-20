@@ -14,6 +14,9 @@
 .Piclayout{
     background-color: transparent;
 }
+.Piclayout img{
+    margin: 0% 0% 0% 0% !important;
+}
 .card1 {
     background-color: #2b8696;
     border-radius: 10px;
@@ -42,4 +45,18 @@
   .card1 a:hover {
     text-decoration: underline;
   }
+  
+  .gridimages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  
+  .gridimages img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px; 
+  }
+  
   

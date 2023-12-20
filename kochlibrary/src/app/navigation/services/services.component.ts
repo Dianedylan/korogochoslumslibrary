@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as Rellax from 'rellax';
 
 @Component({
   selector: 'app-services',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
-
+  ngOnInit() {
+    const rellax = new Rellax('.rellax', {
+      speed: -40, 
+    });
+  }
 }

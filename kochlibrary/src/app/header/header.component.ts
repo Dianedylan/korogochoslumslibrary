@@ -1,5 +1,6 @@
 import { Component, HostListener} from '@angular/core';
-import { Route, RouterLink, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+// import {ExpandMore} from '@mui/icons-material';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +19,25 @@ export class HeaderComponent {
   isSubMenuVisible = false;
   isScrolledUp = false;
 
-  
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  // ngOnInit() {
+  //   this.route.fragment.subscribe(fragment => {
+  //     if (fragment) {
+  //       this.scrollToElement(fragment);
+  //     }
+  //   });
+  // }
+
+  // scrollToElement(elementId: string): void {
+  //   const element = document.getElementById(elementId);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+  //   }
+  // }
+
   @HostListener('window:scroll', ['$event'])
+
   onScroll() {
     this.isScrolledUp = window.scrollY > 0;
   }
@@ -31,4 +49,5 @@ export class HeaderComponent {
   hideSubMenu() {
     this.isSubMenuVisible = false;
   }
+
 }

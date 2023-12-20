@@ -22,7 +22,10 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './navigation/about/about.component';
 import { ServicesComponent } from './navigation/services/services.component';
 import { RouterModule } from '@angular/router';
-import { InvolvementComponent } from './involvement/involvement.component';
+import { InvolvementComponent } from './navigation/involvement/involvement.component';
+import { DonateComponent } from './navigation/involvement/donate/donate.component';
+import { ProgramComponent } from './navigation/involvement/program/program.component';
+import { VolunteeringComponent } from './navigation/involvement/volunteering/volunteering.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { InvolvementComponent } from './involvement/involvement.component';
     FooterComponent,
     AboutComponent,
     ServicesComponent,
-    InvolvementComponent
+    InvolvementComponent,
+    DonateComponent,
+    ProgramComponent,
+    VolunteeringComponent
   ],
   imports: [
     BrowserModule,
