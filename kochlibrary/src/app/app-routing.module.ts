@@ -7,6 +7,7 @@ import { InvolvementComponent } from './navigation/involvement/involvement.compo
 import { DonateComponent } from './navigation/involvement/donate/donate.component';
 import { ProgramComponent } from './navigation/involvement/program/program.component';
 import { VolunteeringComponent } from './navigation/involvement/volunteering/volunteering.component';
+import { ContactsComponent } from './navigation/about/contacts/contacts.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
     component: LandingpageComponent,
    },
   { path:'about', component: AboutComponent},
+  {
+    path: 'contactus' , component: ContactsComponent
+  },
   { path:'whatwedo', component: ServicesComponent},
   { 
     path:'whatyoucando', 

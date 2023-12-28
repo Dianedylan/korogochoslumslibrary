@@ -12,11 +12,11 @@
                 <li routerLinkActive="active"><a [matMenuTriggerFor]="aboutMenu" routerLink="./about">About Us</a>
                     <mat-menu #aboutMenu="matMenu">
                             <button mat-menu-item routerLink="./about">Board</button>
-                            <button mat-menu-item routerLink="./about">Contact</button>                          
+                            <button mat-menu-item routerLink="./contactus">Contact</button>                          
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="aboutMenu" class="material-icons hicon">expand_more</i>
 
-                <li class="menu">
+                <li class="menu" routerLinkActive="active">
                     <a [matMenuTriggerFor]="subMenu" routerLink="./whatwedo"> What We Do</a>
                     <mat-menu #subMenu="matMenu">
                         <!-- <a>What We Do</a> -->
@@ -30,7 +30,7 @@
                 </li><i [matMenuTriggerFor]="subMenu" class="material-icons hicon">expand_more</i>
                   
 
-                <li class="menu">
+                <li class="menu" routerLinkActive="active">
                     <a [matMenuTriggerFor]="subMenu2" routerLink="./whatyoucando"> Get Involved</a>
                     <mat-menu #subMenu2="matMenu">
 
@@ -41,7 +41,7 @@
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="subMenu2" class="material-icons hicon">expand_more</i>
 
-                <li><a class="" routerLink="/home">Donate Now</a></li>
+                <li><a class="" routerLink="/donate">Donate Now</a></li>
                 
             </ul>
 

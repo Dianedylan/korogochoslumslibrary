@@ -1,0 +1,20 @@
+@import "../../../landingpage/landingpage.component.scss";
+// @import "../../landingpage/landingpage.component.scss";
+@import "../../../navigation/about/about.component.scss";
+@import "../../../navigation/services/services.component.scss";
+
+
+mat-card{
+    margin-top: 8%;
+}
+.centeralignment{
+    text-align: start;
+    margin-left:6% ;
+}
+a{
+    text-decoration: none;
+    color: rgb(124, 210, 244);
+}
+a:hover{
+    color: #73c1cf;
+}

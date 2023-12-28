@@ -26,6 +26,7 @@ import { InvolvementComponent } from './navigation/involvement/involvement.compo
 import { DonateComponent } from './navigation/involvement/donate/donate.component';
 import { ProgramComponent } from './navigation/involvement/program/program.component';
 import { VolunteeringComponent } from './navigation/involvement/volunteering/volunteering.component';
+import { ContactsComponent } from './navigation/about/contacts/contacts.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { VolunteeringComponent } from './navigation/involvement/volunteering/vol
     InvolvementComponent,
     DonateComponent,
     ProgramComponent,
-    VolunteeringComponent
+    VolunteeringComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
