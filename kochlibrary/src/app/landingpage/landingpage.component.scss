@@ -61,6 +61,12 @@ img{
     align-items: center;
     background-color: rgb(210, 227, 227);
   }
+  .anchor{
+    display: inline-flex;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
   .cardcontainer{
     text-align: center;
     height: 300px;

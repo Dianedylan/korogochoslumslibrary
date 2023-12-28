@@ -22,7 +22,7 @@ export class LandingpageComponent {
   constructor(public dialog: MatDialog) {}
 
   images = [
-    {path:'../../assets/akinyiwithbook.jpg', text:'', parag: 'A Haven for Dreamers, Thinkers, and Explorers. Where Stories Spark Smiles.'},
+    {path:'../../assets/goodboks.jpg', text:'', parag: 'A Haven for Dreamers, Thinkers, and Explorers. Where Stories Spark Smiles.'},
     {path:'../../assets/backpack.jpg', text: 'Join Our Friendly Community', parag: 'Join Our Friendly Community'},
     {path:'../../assets/backpack.jpg', text: '', parag: 'A simple signature by you means the whole world to us'}
   ];

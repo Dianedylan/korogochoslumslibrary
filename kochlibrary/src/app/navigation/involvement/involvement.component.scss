@@ -2,9 +2,9 @@
 @import "../../navigation/about/about.component.scss";
 @import "../../navigation/services/services.component.scss";
 
-button{
-    width: 10%;
-    margin: 0 0 0 50%;
+.button{
+    width: 15%;
+    margin: 5% 0  5% 50%;
 }
 
 .card1{
@@ -17,6 +17,9 @@ button{
 }
 .top{
     margin-top: 5%;
+}
+.overlazparagraphs{
+    font-size: x-large;
 }
 
   
