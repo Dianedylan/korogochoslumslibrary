@@ -14,8 +14,9 @@
 
             <div fxFlex="" class="">
                 
-            <h5 class="et_pb_toggle_title">Contact Korogocho Library Foundation</h5>
-                <form action="/contact/#wpcf7-f1189-p184-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+            <h5 class="">Contact Korogocho Library Foundation</h5>
+            
+                <!-- <form method="post" class="wpcf7-form init" aria-label="Contact form"           novalidate="novalidate" data-status="init">
                     <div style="display: none;">
                     <input type="hidden" name="_wpcf7" value="1189">
                     <input type="hidden" name="_wpcf7_version" value="5.8.5">
@@ -36,7 +37,38 @@
                     <p></p>
                     <p><input class="wpcf7-form-control wpcf7-submit has-spinner et_pb_button" type="submit" value="Submit"><span class="wpcf7-spinner"></span>
                     </p><div class="wpcf7-response-output" aria-hidden="true"></div>
-                    </form>
+                </form> -->
+            <form [formGroup]="messageForm" (ngSubmit)="onFormSubmit()">
+                <div mat-dialog-content class="content">
+                  
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Name" formControlName="name">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input placeholder="Phone" matInput formControlName="phone">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input placeholder="Email" matInput formControlName="email">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Name</mat-label> -->
+                        <input matInput placeholder="I'm interested In" formControlName="misc">
+                    </mat-form-field>
+                  
+                    <div mat-dialog-actions class="action">
+                    <!-- <button mat-raised-button type="button" [mat-dialog-close]="false">Close</button> -->
+                    <button mat-raised-button color="primary" type="submit">{{ data ? 'Update': 'Add Food Item' }}</button>
+                    </div>
+                </div>
+                
+            </form>
+            
             </div>
         </div>
     </mat-card>
