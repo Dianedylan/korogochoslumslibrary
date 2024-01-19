@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -27,8 +26,11 @@ import { DonateComponent } from './navigation/involvement/donate/donate.componen
 import { ProgramComponent } from './navigation/involvement/program/program.component';
 import { VolunteeringComponent } from './navigation/involvement/volunteering/volunteering.component';
 import { ContactsComponent } from './navigation/about/contacts/contacts.component';
-import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule }  from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -61,8 +63,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatRadioModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    // HttpClient,
     CarouselModule.forRoot()
   ],
   providers: [],

@@ -10,19 +10,10 @@ import { VolunteeringComponent } from './navigation/involvement/volunteering/vol
 import { ContactsComponent } from './navigation/about/contacts/contacts.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    component: LandingpageComponent,
-   },
-  { path:'about', component: AboutComponent},
-  {
-    path: 'contactus' , component: ContactsComponent
-  },
+  { path: 'home', component: LandingpageComponent },
   { path:'whatwedo', component: ServicesComponent},
-  { 
-    path:'whatyoucando', 
-    component: InvolvementComponent,
-  },
+  { path:'whatyoucando', component: InvolvementComponent },
+  // { path: 'contactus', component: ContactsComponent},
     // children: [
       {
         path: 'donate' , component: DonateComponent
@@ -36,6 +27,8 @@ const routes: Routes = [
 
     // ]  
 // },
+  { path:'about', component: AboutComponent},
+  { path: 'contactus', component: ContactsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
