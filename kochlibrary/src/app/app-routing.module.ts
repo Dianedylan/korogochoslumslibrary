@@ -8,6 +8,7 @@ import { DonateComponent } from './navigation/involvement/donate/donate.componen
 import { ProgramComponent } from './navigation/involvement/program/program.component';
 import { VolunteeringComponent } from './navigation/involvement/volunteering/volunteering.component';
 import { ContactsComponent } from './navigation/about/contacts/contacts.component';
+import { BoardComponent } from './navigation/about/board/board.component';
 
 const routes: Routes = [
   { path: 'home', component: LandingpageComponent },
@@ -15,20 +16,30 @@ const routes: Routes = [
   { path:'whatyoucando', component: InvolvementComponent },
   // { path: 'contactus', component: ContactsComponent},
     // children: [
+      // {
+      //   path: 'whatyoucando/:name' , component: DonateComponent
+      // },
+      // {
+      //   path: 'whatyoucando/:name2' , component: VolunteeringComponent
+      // },
+      // {
+      //   path:'whatyoucando/:name3' , component: ProgramComponent
+      // },
       {
-        path: 'donate' , component: DonateComponent
+        path: 'whatyoucando/donate' , component: DonateComponent
       },
       {
-        path: 'volunteer' , component: VolunteeringComponent
+        path: 'whatyoucando/volunteer' , component: VolunteeringComponent
       },
       {
-        path: 'programssponsorship' , component: ProgramComponent
+        path:'whatyoucando/programssponsorship' , component: ProgramComponent
       },
 
     // ]  
 // },
   { path:'about', component: AboutComponent},
   { path: 'contactus', component: ContactsComponent},
+  { path: 'board', component: BoardComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

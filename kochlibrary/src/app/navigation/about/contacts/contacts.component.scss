@@ -1,11 +1,11 @@
 @import "../../../landingpage/landingpage.component.scss";
-// @import "../../landingpage/landingpage.component.scss";
 @import "../../../navigation/about/about.component.scss";
 @import "../../../navigation/services/services.component.scss";
 
 
 mat-card{
     margin-top: 8%;
+    border-left: none !important;
 }
 .centeralignment{
     text-align: start;
@@ -17,4 +17,21 @@ a{
 }
 a:hover{
     color: #73c1cf;
+}
+.mat-mdc-form-field{
+    // display: block !important;
+    // width: 90% !important;
+    // height: 60px !important;
+    margin-right: 20px !important;
+}
+h5{
+    font-weight: 600;
+    font-size: large;
+    margin-bottom: 5%;
+}
+.borderline{
+    // box-sizing: border-box;
+    // box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e3e3;
+    padding: 3% 0 0 4%;
 }

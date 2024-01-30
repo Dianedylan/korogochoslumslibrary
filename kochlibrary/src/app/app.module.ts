@@ -31,6 +31,10 @@ import { MatInputModule }  from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {MatSelectModule} from '@angular/material/select';
+import { BoardComponent } from './navigation/about/board/board.component';
+import { DonationdialogComponent } from './navigation/involvement/donate/donationdialog/donationdialog.component';
 
 
 @NgModule({
@@ -46,7 +50,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     DonateComponent,
     ProgramComponent,
     VolunteeringComponent,
-    ContactsComponent
+    ContactsComponent,
+    BoardComponent,
+    DonationdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    // HttpClient,
+    MatSelectModule,
+    SweetAlert2Module.forRoot(),
     CarouselModule.forRoot()
   ],
   providers: [],

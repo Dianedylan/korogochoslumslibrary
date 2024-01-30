@@ -12,7 +12,7 @@
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                     <a [matMenuTriggerFor]="aboutMenu" routerLink="./about">About Us</a>
                     <mat-menu #aboutMenu="matMenu">
-                            <button mat-menu-item routerLink="">Board</button>
+                            <button mat-menu-item routerLink="./board">Board</button>
                             <button mat-menu-item routerLink="./contactus">Contact</button>                          
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="aboutMenu" class="material-icons hicon">expand_more</i>
@@ -35,14 +35,17 @@
                     <a [matMenuTriggerFor]="subMenu2" routerLink="./whatyoucando"> Get Involved</a>
                     <mat-menu #subMenu2="matMenu">
 
-                            <button mat-menu-item routerLink="./donate">Donate Now</button>
-                            <button mat-menu-item routerLink="./volunteer">Volunteer</button>
-                            <button mat-menu-item routerLink="./programssponsorship">Fundraise</button>
+                            <!-- <button mat-menu-item [routerLink]="['/whatyoucando', 'donate']">Donate Now</button>
+                            <button mat-menu-item [routerLink]="['/whatyoucando', 'volunteer']">Volunteer</button>
+                            <button mat-menu-item [routerLink]="['/whatyoucando', 'programssponsorship']">Fundraise</button> -->
+                            <button mat-menu-item routerLink="./whatyoucando/donate">Donate Now</button>
+                            <button mat-menu-item routerLink="./whatyoucando/volunteer">Volunteer</button>
+                            <button mat-menu-item routerLink="./whatyoucando/programssponsorship">Impact</button>
                           
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="subMenu2" class="material-icons hicon">expand_more</i>
 
-                <li><a class="" routerLink="/donate">Donate Now</a></li>
+                <li class="menu" routerLinkActive="active"><a class="" routerLink="./whatyoucando/donate">Donate Now</a></li>
                 
             </ul>
 

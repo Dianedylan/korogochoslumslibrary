@@ -6,6 +6,7 @@ import {
   MatDialogContent,
 } from '@angular/material/dialog';
 import { AnswerdialogComponent } from '../answerdialog/answerdialog.component';
+import { Router } from '@angular/router';
 
 // export interface DialogData {
 //   correctpercentage: 'progressValue';
@@ -19,7 +20,9 @@ import { AnswerdialogComponent } from '../answerdialog/answerdialog.component';
 })
 export class LandingpageComponent {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+              private router: Router
+    ) {}
 
   images = [
     {path:'../../assets/goodboks.jpg', text:'', parag: 'A Haven for Dreamers, Thinkers, and Explorers. Where Stories Spark Smiles.'},
@@ -92,6 +95,14 @@ export class LandingpageComponent {
 
 
   hideArrows=true;
+
+  onDonate(){
+    this.router.navigate(['/whatyoucando'])
+  }
+  // onVolunteerClick(){
+  //   this.router.navigate(['/whatyoucando/volunteer'])
+  // }
+
 
 
 }

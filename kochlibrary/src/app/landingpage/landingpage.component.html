@@ -23,7 +23,7 @@
         <mat-card-content>
             <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
                 <div fxFlex="" class="flexalign">
-                    <a class="anchor" routerLink="./volunteer">
+                    <a class="anchor" (click)="onDonate()">
                         <span  style="height: 100px;" class="material-icons hicon">person</span>
                         <div>
                             <p>Participate</p>
@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div fxFlex=""  class="flexalign">
-                    <a class="anchor"  routerLink="./donate">
+                    <a class="anchor"  (click)="onDonate()">
                         <span  style="height: 100px;" class="material-icons hicon">person</span>
                         <div>
                             <p>Be a Hand</p>
@@ -41,7 +41,7 @@
                     </a>                
                 </div>
                 <div fxFlex=""  class="flexalign">
-                    <a class="anchor"  routerLink="./donate">
+                    <a class="anchor"  (click)="onDonate()">
                         <span  style="height: 100px;" class="material-icons hicon">person</span>
                         <div>
                             <p>Participate</p>

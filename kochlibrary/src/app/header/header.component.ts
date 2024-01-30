@@ -1,5 +1,5 @@
 import { Component, HostListener} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 // import {ExpandMore} from '@mui/icons-material';
 
 @Component({
@@ -19,15 +19,34 @@ export class HeaderComponent {
   isSubMenuVisible = false;
   isScrolledUp = false;
 
+  // whatonecando!: { name: string};
+  volunteer!:  {name2: string};
+  fundraise!:{name3: string};
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
-  // ngOnInit() {
-  //   this.route.fragment.subscribe(fragment => {
-  //     if (fragment) {
-  //       this.scrollToElement(fragment);
-  //     }
-  //   });
-  // }
+  ngOnInit() {
+    // this.whatonecando = {
+    //   name: this.route.snapshot.params['name'],
+    //   name2: this.route.snapshot.params['name2'],
+    //   name3: this.route.snapshot.params['name3'],
+    // };
+
+    this.route.params.subscribe(
+      (params:Params)=>{
+        // this.whatonecando.name = params['name'];
+        this.volunteer.name2 = params['name2'];
+        this.fundraise.name3 = params['name3'];
+      }
+    );
+    
+    // this.route.fragment.subscribe(fragment => {
+    //   if (fragment) {
+    //     this.scrollToElement(fragment);
+    //   }
+    // });
+  }
+  
 
   // scrollToElement(elementId: string): void {
   //   const element = document.getElementById(elementId);
@@ -49,5 +68,7 @@ export class HeaderComponent {
   hideSubMenu() {
     this.isSubMenuVisible = false;
   }
+
+
 
 }
