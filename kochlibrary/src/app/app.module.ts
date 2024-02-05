@@ -29,7 +29,7 @@ import { ContactsComponent } from './navigation/about/contacts/contacts.componen
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule }  from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpModule } from '@angular/http';
+// import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import {MatSelectModule} from '@angular/material/select';
@@ -74,6 +74,7 @@ import { DonationdialogComponent } from './navigation/involvement/donate/donatio
     FormsModule,
     HttpClientModule,
     MatSelectModule,
+    // MatRadioModule,
     SweetAlert2Module.forRoot(),
     CarouselModule.forRoot()
   ],

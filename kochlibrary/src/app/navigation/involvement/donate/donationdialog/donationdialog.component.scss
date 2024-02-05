@@ -1,0 +1,94 @@
+.cardContainer{
+    text-align: center;
+}
+.donateform{
+    align-items: center;
+    margin: 5%;
+}
+
+mat-form-field{
+    margin-inline-end: 30px;
+    width: 40%;
+}
+.togglebtn {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    box-shadow: none;
+    color: #999;
+    font-family: Poppins,sans-serif;
+    font-size: 17.6px;
+    font-weight: 700;
+    margin-top: 10px;
+    opacity: 1;
+    padding: 10px;
+    cursor: pointer;
+    // border: none;
+    outline: none;
+    margin-left: 10%;
+    width: 20%;
+    height: 15%;
+}
+.active {
+    color: #ec6608 !important;
+    background-color:#f1f0f0;
+}
+label{
+    font-size: 10px;
+    box-sizing: border-box;
+    width: 15%;
+    height: 30%;
+    // border: 1px solid #cacacc;
+    margin: 20px 0 0 29px;
+}
+
+input[type="radio"] {
+    margin-left: 5px; 
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #ec6608;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  input[type="radio"]:checked {
+    background-color: #ec6608;
+  }
+  .moneycard{
+    background-color: #f1f0f0;
+    width: 90%;
+    text-align: center;
+  }
+  .mdc-card {
+    display: inline-flex;
+}
+  .text-center{
+        border: 1px solid #e7e9ea;
+        border-radius: 5px;
+        background-color: white;
+        width: 500px;
+        height: 40px;
+        align-items: center;
+        text-align: center;
+        font-size: medium;
+        font-weight: 500;
+        margin:2% 0 2% 10%;
+    p{
+        margin-top: 2%;
+    }
+  }
+  .subtitle h2{
+    text-align: center;
+  }
+  .matradio{
+    margin-top: 10px;
+  }
+
+  

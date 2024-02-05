@@ -25,19 +25,11 @@ export class ContactService {
   }
 
 
-  addDonationDetails(data: any){
-    return this.http.post('http://localhost:3000/donors', data);
-  }
-  
-  getDonorList(): Observable<any>{
-    return this.http.get('http://localhost:3000/messagesdonors');
-  }
+  private selectedAmountSource = new BehaviorSubject<number>(0);
+  selectedAmount$ = this.selectedAmountSource.asObservable();
 
-  private selectedAmountSubject = new BehaviorSubject<number | string>(null!);
-  selectedAmount$ = this.selectedAmountSubject.asObservable();
-
-  updateSelectedAmount(selectedAmount: number | string): void {
-    this.selectedAmountSubject.next(selectedAmount);
+  setSelectedAmount(amount: number) {
+    this.selectedAmountSource.next(amount);
   }
   
 

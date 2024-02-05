@@ -39,7 +39,7 @@
                             <input matInput placeholder="I'm interested In" formControlName="misc">
                         </mat-form-field>
                     
-                        <button mat-raised-button color="primary" type="submit">{{ data? 'Update': 'Send Message'  }}</button>
+                        &nbsp;<a href="mailto:kochcommunitylib@gmail.com"><button mat-raised-button color="primary" type="submit" [disabled]="!messageForm.valid">{{ data? 'Update': 'Send Message'  }}</button></a>
                     
                     </div>
                     

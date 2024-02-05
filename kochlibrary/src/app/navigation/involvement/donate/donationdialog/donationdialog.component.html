@@ -1,51 +1,108 @@
-<form [formGroup]="donorForm" (ngSubmit)="onFormSubmit()">
-    <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="eg. first name" formControlName="firstName">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Surname</mat-label>
-        <input matInput placeholder="address" formControlName="surname">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Phone number</mat-label>
-        <input matInput placeholder="phone no." formControlName="phone">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="email" formControlName="email">
-    </mat-form-field>
-<!--   
-  <mat-form-field appearance="outline">
-      <mat-label>Item</mat-label>
-      <input matInput placeholder="Item name" formControlName="itemName">
-  </mat-form-field>
+<div class="cardContainer">
+    <div class="subtitle"><h2>Support Our Project</h2></div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Quantity</mat-label>
-    <input matInput placeholder="qty" formControlName="qty">
-</mat-form-field>
-
-  <mat-form-field appearance="outline">
-      <mat-label>Price Per Unit</mat-label>
-      <input placeholder="cost" matInput formControlName="itemValue">
-  </mat-form-field>
-  
-<mat-form-field appearance="outline">
-    <mat-label>Item code</mat-label>
-    <input placeholder="Add item code" matInput formControlName="code">
-</mat-form-field> -->
-  
-<div mat-dialog-actions class="action">
-  <button mat-button color="primary" type="submit">Donate now</button>
-</div>
-
-</form>
-
-<mat-card>
-    <div class="text-center">
-        <!--  *ngIf="selectedAmount !== undefined" -->
-        
-        you have chosen a donation of<p class="amountdonated"> {{ selectedAmount }}</p>
+    <form [formGroup]="donorForm" (ngSubmit)="onFormSubmit()" class="donateform">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="eg. first name" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Surname</mat-label>
+            <input matInput placeholder="address" formControlName="surname">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone number</mat-label>
+            <input matInput placeholder="phone no." formControlName="phone">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+      
+    <!-- <div mat-dialog-actions class="action" style="display: none;">
+      <button mat-button color="primary" type="submit">Details</button>
+    </div>
+     -->
+    </form>
+    <div>
+        <button mat-raised-button (click)="showSet1()" class="togglebtn" [ngClass]="{ 'active': showRadioSet === 1 }">Single</button>
+        <button mat-raised-button (click)="showSet2()" class="togglebtn" [ngClass]="{ 'active': showRadioSet === 2 }">Periodic</button>
       </div>
-</mat-card>
+    <mat-card class="moneycard">
+          
+          <div *ngIf="showRadioSet === 1">
+            <div class="text-center">
+                <p>you have chosen a donation of {{ selectedAmount }}</p>
+              </div> 
+          </div>
+          
+            <div *ngIf="showRadioSet === 2">
+                    <label *ngFor="let option of radioSet2Options">
+                    <input type="radio" [value]="option.value" [(ngModel)]="selectedOption2" />
+                    {{ option.label }}
+                    </label>
+                    <div class="text-center">
+                        <p>you have chosen a donation of {{ selectedAmount }} {{selectedOption2}} </p>
+                    </div>
+            </div>
+            
+            <div class="subtitle">
+                <h2>{{ selectedOption === 'option1' ? 'Credit Card Information' : 'Pay with PayPal' }}</h2>
+            </div>
+    
+            <mat-divider></mat-divider>
+                
+            <mat-radio-group [(ngModel)]="selectedOption" class="matradio">
+                    <mat-radio-button appearance="standard" class="togglebtn" value="option1">CREDIT CARD</mat-radio-button>
+                    <mat-radio-button class="togglebtn" value="option2">PAYPAL</mat-radio-button>
+            </mat-radio-group>
+                
+            <div *ngIf="selectedOption === 'option1'">
+                <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
+                    <div mat-dialog-content class="content">
+                    
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>Credit card number</mat-label> -->
+                            <input matInput placeholder="Credit card number" formControlName="cardNumber">
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>month</mat-label> -->
+                            <input placeholder="Month" matInput formControlName="month">
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>year</mat-label> -->
+                            <input placeholder="Year" matInput formControlName="year">
+                        </mat-form-field>
+                                
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>cvv</mat-label> -->
+                            <input placeholder="Cvv" matInput formControlName="cvv">
+                        </mat-form-field>
+                    
+                        <button [disabled]="!donorForm.valid && !cardForm.valid" mat-raised-button color="primary" type="submit">Donate Now</button>
+                    
+                    </div>
+                    
+                </form>
+                
+            </div>
+
+            <div *ngIf="selectedOption === 'option2'">
+                <button mat-raised-button color="primary" type="submit">PayPal</button>
+
+            </div>
+                
+            <div>
+                <div #paymentRef>
+                    
+                </div>
+          
+        </div>
+          
+          
+          
+        
+    </mat-card>
+</div>

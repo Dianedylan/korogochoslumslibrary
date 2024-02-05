@@ -62,6 +62,20 @@
       "email": "text@text.co",
       "misc": "try",
       "id": 9
+    },
+    {
+      "name": "dol",
+      "phone": "0766666666",
+      "email": "sd@s.c",
+      "misc": "th",
+      "id": 10
+    },
+    {
+      "name": "des",
+      "phone": "0789888888",
+      "email": "d2@f.z",
+      "misc": "interested",
+      "id": 11
     }
   ],
   "donors": [
@@ -71,6 +85,13 @@
       "phone": "+254765456543",
       "email": "c@g.moc",
       "id": 1
+    },
+    {
+      "firstName": "gdfd",
+      "surname": "dsrr",
+      "phone": "0756555555",
+      "email": "d@gm.c",
+      "id": 2
     }
   ]
 }

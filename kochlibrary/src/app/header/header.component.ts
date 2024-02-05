@@ -20,8 +20,8 @@ export class HeaderComponent {
   isScrolledUp = false;
 
   // whatonecando!: { name: string};
-  volunteer!:  {name2: string};
-  fundraise!:{name3: string};
+  volunteer!: { name2: string; };
+  fundraise!: { name3: string; };
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
