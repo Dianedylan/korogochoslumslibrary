@@ -9,15 +9,20 @@ import { DonationService } from 'src/app/sharedServices/donation.service';
 import { take, switchMap } from 'rxjs';
 // import {}
 
+declare var paypal: any;
+
 @Component({
   selector: 'app-donationdialog',
   templateUrl: './donationdialog.component.html',
   styleUrls: ['./donationdialog.component.scss']
 })
 export class DonationdialogComponent implements OnInit {
-   selectedAmount!: number | string;
+
+   selectedAmount!: number;
    donations: Donation[] = [];
    donationSelected: number | undefined | string = '';
+   amount = 0;
+   isCreditCardPayment: boolean = true;
 
    @ViewChild('paymentRef', {static:true}) paymentRef!: ElementRef;
   
@@ -34,6 +39,7 @@ export class DonationdialogComponent implements OnInit {
     console.log('this selected  amount', this.selectedAmount);
     
   });
+  
 }
      
   donorForm = new FormGroup({
@@ -53,46 +59,53 @@ export class DonationdialogComponent implements OnInit {
   ngOnInit() {
     this.donorForm.patchValue(this.data);
     this.cardForm.patchValue(this.data);
-    // this.donations = [
-    //   {id: 1, amount: 50},
-    //   {id: 2, amount: 85},
-    //   {id: 3, amount: 120},
-    //   {id: 4, amount: 250}
-    // ];
-    // console.log('paypal integrations', window.paypal);
+
+    console.log('paypal integrations', window.paypal.buttons);
+    this.amount = this.selectedAmount;
     
-    window.paypal.Buttons(
+    paypal.Buttons(
       {
-        style: {
-          layout: 'horizontal',
-          color: 'blue',
-          shape: 'rect',
-          label: 'paypal',
-        },
-        makeDonation: (data: any, actions: any) => {
-          return this._donateService['selectedAmount$'].pipe(
-            take(1), // To take only the first emitted value
-            switchMap((selectedAmount) => {
+        // style: {
+        //   layout: 'horizontal',
+        //   color: 'blue',
+        //   shape: 'rect',
+        //   label: 'paypal',
+        // },
+        createOrder: (data: any, actions: any): any => {
+          this.isCreditCardPayment = true;
+          if (this.isCreditCardPayment) {
               return actions.order.create({
                 purchase_units: [
                   {
                     amount: {
-                      value: this.selectedAmount,
                       currency_code: 'USD',
+                      value: this.amount.toString(),
                     },
                   },
                 ],
               });
-            })
-          );
+            }else {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      currency_code: 'USD',
+                      value: this.amount.toString(),
+                    },
+                  },
+                ],
+              });
+            }
         },
         
         onApprove: (data:any, actions:any) => {
           return actions.order.capture().then((details:any) =>{
-            console.log(details);
+            this._sweetAlerts.showSuccessAlert("Amount sent successfully!"); 
+            console.log("paypal details",details);
           });
         },
         onError: (error:any) => {
+          this._sweetAlerts.showErrorAlert("An error occurred, please try again!");
           console.log(error);
           
         }

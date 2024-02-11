@@ -10,26 +10,25 @@
                     <div class="choose-amount">
                         <div class="icon-currency">$</div>
                    
-                   <!-- [opened]="true" -->
+                         <!-- [opened]="true" -->
             
-                    <div style="width: 100%;" class="selectpanel">
-                        <mat-select placeholder="Select an amount" class="amount-list" [(ngModel)]="donationSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAmountSelected($event)">
-                          <mat-option class="amount-option active" *ngFor="let donation of donations" [value]="donation.amount">{{donation.amount}}</mat-option>
-                          <mat-option class="amount-option active" value="other">Other</mat-option>
-                          <div >
-                            <input *ngIf="donationSelected === 'other'" matInput type="number" placeholder="Enter amount" [(ngModel)]="customAmount">
-                        </div>
-                        </mat-select>
+                        <div style="width: 100%;" class="selectpanel">
+                            <mat-select placeholder="Select amount" class="amount-list" [(ngModel)]="donationSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAmountSelected($event)" >
+                            <mat-option class="amount-option active" *ngFor="let donation of donations" [value]="donation.amount">{{donation.amount}}</mat-option>
+                            <mat-option class="amount-option active" value="other">Other</mat-option>
+                            <div>
+                                <input *ngIf="donationSelected === 'other'" matInput type="number" placeholder="Enter amount" [(ngModel)]="customAmount">
+                            </div>
+                            </mat-select>
 
-                 
-                      
+                    
+                        
+                        </div>
                     </div>
-                </div>
                   
-                    <div id="btn-pre-donation-form" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDonation" data-progetto="1">
+                    <div id="" class="btn btn-danger" data-bs-toggle="modal">
                      <button mat-raised-button (click)="openDonateForm()" [disabled]="!donationSelected"><span>Donate</span></button>
                       <i id="heart" class="fa-solid fa-heart ms-1 pulse"></i>
-                      <i data-tippy="Per completare la donazione in memoria clicca su DONA IN MEMORIA" data-tippy-placement="bottom" id="xmark" class="fa fa-circle-xmark d-none" style="color: #ffffff;" tabindex="0"></i>
                     </div>
                   </form>
                   

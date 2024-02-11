@@ -9,7 +9,11 @@ mat-card{
 }
 .centeralignment{
     text-align: start;
-    margin-left:6% ;
+    margin: 0 0 10px 6%;
+}
+.centeralignment[_ngcontent-ng-c2393349527] {
+    text-align: center;
+    margin: 0 0 10px 0;
 }
 a{
     text-decoration: none;
@@ -33,5 +37,5 @@ h5{
     // box-sizing: border-box;
     // box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e3e3;
-    padding: 3% 0 0 4%;
+    padding: 7% 0 0 4%;
 }

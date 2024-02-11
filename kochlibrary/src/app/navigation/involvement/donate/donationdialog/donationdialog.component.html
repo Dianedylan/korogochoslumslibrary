@@ -32,7 +32,7 @@
           
           <div *ngIf="showRadioSet === 1">
             <div class="text-center">
-                <p>you have chosen a donation of {{ selectedAmount }}</p>
+                <p>you have chosen a donation of $ {{ selectedAmount }} <a>single</a></p>
               </div> 
           </div>
           
@@ -42,7 +42,7 @@
                     {{ option.label }}
                     </label>
                     <div class="text-center">
-                        <p>you have chosen a donation of {{ selectedAmount }} {{selectedOption2}} </p>
+                        <p>you have chosen a donation of $ {{ selectedAmount }} {{selectedOption2}} </p>
                     </div>
             </div>
             
@@ -56,28 +56,27 @@
                     <mat-radio-button appearance="standard" class="togglebtn" value="option1">CREDIT CARD</mat-radio-button>
                     <mat-radio-button class="togglebtn" value="option2">PAYPAL</mat-radio-button>
             </mat-radio-group>
-                
+
+
+            <div #paymentRef>
+  
             <div *ngIf="selectedOption === 'option1'">
-                <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
+                <!-- <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
                     <div mat-dialog-content class="content">
                     
                         <mat-form-field appearance="outline">
-                            <!-- <mat-label>Credit card number</mat-label> -->
                             <input matInput placeholder="Credit card number" formControlName="cardNumber">
                         </mat-form-field>
                         
                         <mat-form-field appearance="outline">
-                            <!-- <mat-label>month</mat-label> -->
                             <input placeholder="Month" matInput formControlName="month">
                         </mat-form-field>
                         
                         <mat-form-field appearance="outline">
-                            <!-- <mat-label>year</mat-label> -->
                             <input placeholder="Year" matInput formControlName="year">
                         </mat-form-field>
                                 
                         <mat-form-field appearance="outline">
-                            <!-- <mat-label>cvv</mat-label> -->
                             <input placeholder="Cvv" matInput formControlName="cvv">
                         </mat-form-field>
                     
@@ -85,21 +84,19 @@
                     
                     </div>
                     
-                </form>
+                </form> -->
                 
             </div>
 
             <div *ngIf="selectedOption === 'option2'">
-                <button mat-raised-button color="primary" type="submit">PayPal</button>
-
+                <!-- <button mat-raised-button color="primary" type="submit">PayPal</button> -->
+                <!-- <div #paymentRef></div> -->
             </div>
                 
-            <div>
-                <div #paymentRef>
+           
                     
                 </div>
-          
-        </div>
+         
           
           
           

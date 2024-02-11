@@ -10,8 +10,8 @@ import {Routes, RouterModule} from '@angular/router';
 export class AboutComponent {
   images = [
     {path:'../../assets/bookshelf.jpg', text:'', parag: 'A Haven for Dreamers, Thinkers, and Explorers. Where Stories Spark Smiles.'},
-    {path:'../../assets/backpack.jpg', text: '', parag: 'Join Our Friendly Community'},
-    {path:'../../assets/backpack.jpg', text: '', parag: 'A simple signature by you means the whole world to us'}
+    {path:'../../assets/boyreading.jpeg', text: '', parag: 'Join Our Friendly Community'},
+    {path:'../../assets/talkb4sleep.jpeg', text: '', parag: 'A simple signature by you means the whole world to us'}
   ];
 
   activeSlideIndex = 0;

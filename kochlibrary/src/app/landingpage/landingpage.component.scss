@@ -1,7 +1,7 @@
 .container {
     position: relative;
-    top: -10px;
-    left: -20px;
+    // top: -10px;
+    // left: -20px;
     // right: -60px;
     // margin: ;
     width: 100%;
@@ -50,22 +50,26 @@ img{
   }
 
   .material-icons {
-    font-size: 120px;
+    font-size: 110px;
     color: #b29e1c;
+    margin-top: 10%;
   }
 
   .flexalign{
     height: 200px;
-    display: inline-flex;
     text-align: start;
     align-items: center;
     background-color: rgb(210, 227, 227);
+  }
+  .donorstext{
+      margin: 20% 0 0 10px;
   }
   .anchor{
     display: inline-flex;
     cursor: pointer;
     text-decoration: none;
     color: black;
+    margin:5% 0 0 10%;
   }
   .cardcontainer{
     text-align: center;
@@ -78,6 +82,7 @@ img{
 
   h1{
     margin-top: 50px;
+    font-weight: 500;
   }
   
   p{
@@ -147,18 +152,48 @@ img{
     visibility: hidden;
 }
 
- 
   .gametext{
     height: 80px; 
-    background-color: rgb(232, 236, 239);
-    margin: 10px 10px;
+    background-color: #0ec0e424;
+    margin: 10px;
     text-align: start;
     p{
         margin-top: 30px;
     }
-    // width: 60%;
   }
 
   .game_accordion img{
     height: 250px;
+  }
+
+
+  .gamebtns{
+    margin-left: 69%;
+    margin-bottom: 5px;
+  }
+  .gamebtns .leftbtn{
+    margin-right:18%;
+  }
+
+  ::ng-deep.carousel-control-prev-icon {
+    margin-right: 70%;
+  }
+  ::ng-deep.carousel-control-next-icon {
+  margin-left: 70%;
+  }
+  ::ng-deep.carousel-indicators {
+    margin-right: 3px;
+    margin-left: 3px;
+    display: none;
+  }
+
+
+  
+  @media only screen and (min-width: 600px) {
+  .overlazparagraphs {
+    margin: 50px 60px;
+}
+.larger {
+  font-size: 28px;
+}
   }

@@ -26,27 +26,30 @@
           <span class="footer_header">Quick Links</span>
           <ul class="list-unstyled">
             <li>
-              <a  routerLink="/" fragment="about"> About Us</a>
+              <a  routerLink="about" > About Us</a>
             </li>
             <li>
-              <a routerLink="/" fragment="services"> Services</a>
+              <a routerLink="whatwedo" > Services</a>
             </li>
-            <li>
+            <!-- <li>
               <a routerLink="/home/faqs"> FAQs</a>
             </li>
             <li>
               <a routerLink="/home/terms-and-conditions"> Terms & Conditions</a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div fxFlex="">
           <span class="footer_header">Useful Links </span>
           <ul class="list-unstyled">
             <li>
-              <a target="_blank" href="http://www.landcommission.go.ke/">National Land Commission</a>
+              <a target="_blank" routerLink="whatyoucando/donate">Donate</a>
             </li>
             <li>
-              <a target="_blank" href="https://lands.go.ke/">Ministry of Lands and Physical Planning</a>
+              <a target="_blank" routerLink="whatyoucando/volunteer">Volunteer</a>
+            </li> 
+            <li>
+              <a target="_blank" routerLink="whatyoucando/programssponsorship">Impact</a>
             </li>
           </ul>
         </div>
@@ -60,12 +63,14 @@
           </li>
           <li>
             <div class="logo_container" fxFlex="15" fxFlex.xs="100" fxLayout="row">
-              <p class="disclaimer"><b><span><a href="https://www.youtube.com/channel/UCeOiPOsQnirl_rhStmXafiw/featured" target="_blank"> <img [routerLink]="['/']" class="logo-img" src="../../assets/whatsapp.jpg" alt="whatsapp Logo"></a></span></b></p>
+              <p class="disclaimer"><b><span><a href="" target="_blank"> <img [routerLink]="['/']" class="logo-img" src="../../assets/whatsapp.jpg" alt="whatsapp Logo"></a></span></b></p>
+              <!-- <p class="disclaimer"><b><span><a href="https://www.youtube.com/channel/UCeOiPOsQnirl_rhStmXafiw/featured" target="_blank"> <img [routerLink]="['/']" class="logo-img" src="../../assets/whatsapp.jpg" alt="whatsapp Logo"></a></span></b></p> -->
             </div>
           </li>
           <li>
             <div class="logo_container" fxFlex="15" fxFlex.xs="100" fxLayout="row">   
-              <p class="disclaimer"><b><span><a href="https://www.facebook.com/people/ArdhiSasa/100077244823564/" target="_blank"><img [routerLink]="['/']" class="logo-img" src="../../assets/fb.jpg" alt="facebook Logo"></a></span></b></p>
+              <p class="disclaimer"><b><span><a href="" target="_blank"><img [routerLink]="['/']" class="logo-img" src="../../assets/fb.jpg" alt="facebook Logo"></a></span></b></p>
+              <!-- <p class="disclaimer"><b><span><a href="https://www.facebook.com/people/ArdhiSasa/100077244823564/" target="_blank"><img [routerLink]="['/']" class="logo-img" src="../../assets/fb.jpg" alt="facebook Logo"></a></span></b></p> -->
             </div>
           </li>
           </ul>
@@ -74,9 +79,8 @@
     </div>
     <div class="col-md-12 footer-copyright">
       <div class="copyrighttext">
-        Copyright Korogocho Slums Community Library 2023 <br>
-        ©{{year}} All rights reserved <br>
-        made with ♥︎ by Diane.I
+        Copyright Korogocho Slums Community Library 2023 | ©{{year}} All rights reserved <br>
+        <span style="margin-left: 45%;">Made with ♥︎</span>
       </div>
     </div>
   </footer>

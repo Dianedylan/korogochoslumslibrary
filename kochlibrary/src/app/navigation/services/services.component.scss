@@ -50,6 +50,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
+    margin-left: 3%;
   }
   
   .gridimages img {
@@ -59,4 +60,8 @@
     border-radius: 5px; 
   }
   
-  
+  .overlazparagraphs {
+    width: 90%;
+    // align-items: center;
+
+}

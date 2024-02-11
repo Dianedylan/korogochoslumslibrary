@@ -1,7 +1,7 @@
 @import "/src/app/landingpage/landingpage.component.scss";
 .overlay-txt{
     top: 30%; 
-    left: 26%; 
+    left: 50%; 
 }
 .container {
     max-width: 100%;
@@ -13,23 +13,23 @@
 //   padding-top: 4%;
 background-color: rgb(220, 219, 219);
 }
+.container img{
+    object-fit: cover;
+}
 .login_card {
-    // position: relative;
     position: absolute;
-    margin: -380px 0 0 6.5%;
-    // width: 400px;
+    align-items: center;
+    margin: -340px 0 0 30.5%;
     height: 200px;
     color: #194960;
     font-weight: 800;
-    background-color: hsla(0,0%,100%,.6);
-    // background-color: hsla(0,0%,100%,.6);
+    background-color: rgb(0 0 0 / 40%);
+    // rgba(0, 0, 0, 0.38);
     border-radius: 0.3rem;
     max-width: 450px;
-    // padding: 1.8rem 1.5rem;
     text-align: center;
     width: 100%;
     border-radius: 5px;
-    // min-height: 345px;
     box-shadow: 0px 0px 0px 12px rgba(249 249 249 / 55%);
     -webkit-box-shadow: 0px 0px 0px 12px rgb(249 249 249 / 55%);
     -moz-box-shadow: 0px 0px 0px 12px rgba(249 249 249 / 55%);
@@ -41,14 +41,13 @@ background-color: rgb(220, 219, 219);
 //   }
 }
 
- .amount-list {
-    border-radius: .3rem;
-    margin-top: .8rem;
+.amount-list {
+    border-radius: 0.3rem;
+    margin-top: 0.8rem;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     margin-top: 6% !important;
 }
-
  .choose-amount {
     background: #fff;
     border-radius: .5rem;
@@ -89,6 +88,12 @@ background-color: rgb(220, 219, 219);
 
 #pre-donation-form {
     pointer-events: auto;
+    width: 410px;
+}
+ .btn-danger{
+    margin-top: 12%;
+    background-color: rgb(0 0 0 / 40%);
+    border: #ec6608;
 }
 
 .choose-amount input {
@@ -124,16 +129,12 @@ background-color: rgb(220, 219, 219);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 0;
-    min-width: 160px;
     padding: 10px 16px;
     text-align: center;
     text-transform: uppercase;
     margin-top: 10%;
 }
 
-.mat-mdc-select-arrow {
-    width: 50px !important;
-    height: 5px;
-    position: relative;
-    color: var(--mat-select-enabled-arrow-color);
+::ng-deep.mat-select-value {
+    width: 90% !important;
 }

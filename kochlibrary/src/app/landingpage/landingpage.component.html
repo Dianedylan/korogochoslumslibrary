@@ -22,30 +22,34 @@
     <mat-card>
         <mat-card-content>
             <div class="" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill>
-                <div fxFlex="" class="flexalign">
+                <div fxFlex="30" class="flexalign">
                     <a class="anchor" (click)="onDonate()">
-                        <span  style="height: 100px;" class="material-icons hicon">person</span>
-                        <div>
+                        <!-- <span  style="height: 100px;" class="material-icons hicon">person</span> -->
+                        <i id="heart" class="fa-solid fas fa-users ms-1 pulse material-icons hicon"></i>
+                    
+                        <div class="donorstext">
                             <p>Participate</p>
-                        <h4>As a Volunteer</h4>
+                        <p>As a Volunteer</p>
                         </div>
                     </a>
                 </div>
                 <div fxFlex=""  class="flexalign">
                     <a class="anchor"  (click)="onDonate()">
-                        <span  style="height: 100px;" class="material-icons hicon">person</span>
-                        <div>
+                        <!-- <span  style="height: 100px;" class="material-icons hicon">person</span> -->
+                        <i id="heart" class="fa-solid fas fa-hand-holding-medical ms-1 pulse material-icons hicon"></i>
+                        <div class="donorstext">
                             <p>Be a Hand</p>
-                        <h4>As a Donor</h4>
+                        <p>As a Donor</p>
                         </div>
                     </a>                
                 </div>
                 <div fxFlex=""  class="flexalign">
                     <a class="anchor"  (click)="onDonate()">
-                        <span  style="height: 100px;" class="material-icons hicon">person</span>
-                        <div>
+                        <!-- <span  style="height: 100px;" class="material-icons hicon">person</span> -->
+                        <i id="heart" class="fa-solid fa-donate ms-1 pulse material-icons hicon"></i>
+                        <div class="donorstext">
                             <p>Participate</p>
-                        <h4>As a Sponsor</h4>
+                        <p>As a Sponsor</p>
                         </div>
                     </a>                
                 </div>
@@ -105,8 +109,8 @@
                     </slide>
                     </carousel>
               
-                    <div>
-                        <button mat-raised-button (click)="finishQuiz()">Finish</button>
+                    <div class="gamebtns">
+                        <button mat-raised-button (click)="finishQuiz()"  class="leftbtn">Finish</button>
                         <button mat-raised-button  (click)="tryAgain()">Try again</button>
                     </div>
                     

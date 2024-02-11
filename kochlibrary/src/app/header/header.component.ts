@@ -1,5 +1,6 @@
 import { Component, HostListener} from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+// import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 // import {ExpandMore} from '@mui/icons-material';
 
 @Component({
@@ -23,9 +24,21 @@ export class HeaderComponent {
   volunteer!: { name2: string; };
   fundraise!: { name3: string; };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, 
+              private router: Router,
+              // public responsive: BreakpointObserver
+              ) {}
 
   ngOnInit() {
+//     this.responsive
+// .observe([Breakpoints.HandsetPortrait])
+// .subscribe((state: BreakpointState) => {
+// if (state.matches) {
+// console.log(
+// 'This is the Handset Portrait point at max-width: 599.98 px and portrait orientation.'
+// );
+// }
+// });
     // this.whatonecando = {
     //   name: this.route.snapshot.params['name'],
     //   name2: this.route.snapshot.params['name2'],
