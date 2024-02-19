@@ -23,7 +23,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
     h5 a {
         color: #fff;
         text-decoration: none;
@@ -36,6 +36,9 @@
     margin-top: 10px;
   }
   }
+  .displaynone{
+    display: none;
+  }
   
   .card1:hover {
     transform: scale(1.05);
@@ -44,6 +47,9 @@
   
   .card1 a:hover {
     text-decoration: underline;
+  }
+  .displayclass{
+    display: none;
   }
   
   .gridimages {
@@ -61,7 +67,48 @@
   }
   
   .overlazparagraphs {
-    width: 90%;
-    // align-items: center;
-
+    width: 80%;
+  }
+  .overlazparagraphs{
+    margin: 50px 100px;
+    text-align: start;
+  }
+  @media only screen and (max-width: 600px) {
+    .top{
+      flex-direction:column !important;
+    }
+    .overlazparagraphs {
+      margin: 40px 0 0 40px;
+  }
+  .gridimages  img {
+    width: 100px;
+    height: 110px !important;
+    border-radius: 5px;
+  }
+  .centeralignment .gridimages{
+    margin-left: -5px !important;
+  }
+  .centeralignment  p {
+    margin-top: revert;
+    font-size: 10px;
+    margin-left: 3%;
 }
+  .Piclayout {
+    margin-top: 4%;
+
+    img {
+      padding: 0px;
+      // margin-top: 8%;
+    }
+  } 
+  .centeralignment mat-card{
+    height: 230px !important;
+    margin-left: 5%;
+  }
+  .hideclass{
+    display: none;
+  }
+   .displayclass{
+    display: contents;
+  }
+  }

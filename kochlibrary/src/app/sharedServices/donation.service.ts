@@ -22,4 +22,8 @@ export class DonationService {
   addCardDetails(data: any){
     return this.http.post('http://localhost:3000/donorcard', data);
   }
+  
+  saveDonationData(data: any){
+    return this.http.post('http://localhost:3000/donors', data);
+  }
 }

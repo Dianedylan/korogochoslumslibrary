@@ -18,15 +18,11 @@
                 </li><i [matMenuTriggerFor]="aboutMenu" class="material-icons hicon">expand_more</i>
 
                 <li class="menu" routerLinkActive="active">
-                    <a [matMenuTriggerFor]="subMenu" routerLink="./whatwedo"> What We Do</a>
+                    <a [matMenuTriggerFor]="subMenu"> What We Do</a>
                     <mat-menu #subMenu="matMenu">
-                        <!-- <a>What We Do</a> -->
-                        <!-- <ul> -->
-                            <button mat-menu-item routerLink="./whatwedo">Library material</button>
-                            <button mat-menu-item routerLink="./whatwedo">fees Donations</button>
-                            <button mat-menu-item>Food/Cloth Donations</button>
-                          
-                        <!-- </ul> -->
+                            <button mat-menu-item routerLink="./whatwedo" fragment="library_material_donation">Library material</button>
+                            <button mat-menu-item routerLink="./whatwedo" fragment="fees_donation">fees Donations</button>
+                            <button mat-menu-item routerLink="./whatwedo" fragment="food_clothing_donations">Food/Cloth Donations</button>
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="subMenu" class="material-icons hicon">expand_more</i>
                   
@@ -38,14 +34,14 @@
                             <!-- <button mat-menu-item [routerLink]="['/whatyoucando', 'donate']">Donate Now</button>
                             <button mat-menu-item [routerLink]="['/whatyoucando', 'volunteer']">Volunteer</button>
                             <button mat-menu-item [routerLink]="['/whatyoucando', 'programssponsorship']">Fundraise</button> -->
-                            <button mat-menu-item routerLink="./whatyoucando/donate">Donate Now</button>
+                            <button mat-menu-item routerLink="./donate">Donate Now</button>
                             <button mat-menu-item routerLink="./whatyoucando/volunteer">Volunteer</button>
                             <button mat-menu-item routerLink="./whatyoucando/programssponsorship">Impact</button>
                           
                     </mat-menu>
                 </li><i [matMenuTriggerFor]="subMenu2" class="material-icons hicon">expand_more</i>
 
-                <li class="menu" routerLinkActive="active"><a class="" routerLink="./whatyoucando/donate">Donate Now</a></li>
+                <li class="menu"><a class="" routerLink="./donate">Donate Now</a></li>
                 
             </ul>
 

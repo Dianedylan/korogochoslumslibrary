@@ -19,10 +19,11 @@
             <input matInput placeholder="email" formControlName="email">
         </mat-form-field>
       
-    <!-- <div mat-dialog-actions class="action" style="display: none;">
-      <button mat-button color="primary" type="submit">Details</button>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!donorForm.valid">Send Details</button>
     </div>
-     -->
+    <div *ngIf="detailsSent"><p>Please proceed to donate below</p></div>
+    
     </form>
     <div>
         <button mat-raised-button (click)="showSet1()" class="togglebtn" [ngClass]="{ 'active': showRadioSet === 1 }">Single</button>
@@ -60,7 +61,7 @@
 
             <div #paymentRef>
   
-            <div *ngIf="selectedOption === 'option1'">
+            <div *ngIf="selectedOption === 'option1'" >
                 <!-- <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
                     <div mat-dialog-content class="content">
                     

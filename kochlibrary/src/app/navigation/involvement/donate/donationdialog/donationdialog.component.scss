@@ -88,7 +88,38 @@ input[type="radio"] {
     text-align: center;
   }
   .matradio{
+    display: none;
     margin-top: 10px;
   }
+  .action{
+    justify-content: center;
+  }
+  @media only screen and (max-width: 600px){ 
+    // .text-center p {
+    //   margin-top: 2% !important;
+    //   margin-left: -55% !important;
+    //   font-size: xx-small !important;
+    // }
+      .text-center {
+          width: 200px !important;
+          height: 45px !important;
+      }
+      mat-form-field {
+        width: 100% !important;
+      }
+      .togglebtn {
+        width: initial !important;
+        height: 15%;
+    }
 
+    }
+
+  @media only screen and (min-width: 601px) and (max-width:768px){
+    .text-center {
+      width: 350px;
+  }
   
+
+
+
+}

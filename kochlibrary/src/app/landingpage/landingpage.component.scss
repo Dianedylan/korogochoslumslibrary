@@ -94,10 +94,12 @@ img{
     top: 40%;
     left: 40%;
     transform: translate(-60%, -60%);
-    color: #5c5907;
-    font-size: 46px;
+    color: #fff;
+    font-size: 40px;
     text-align: start;
+    margin: -20px;
   }
+
   .overlay-txt {
     position: absolute;
     top: 50%;
@@ -150,7 +152,13 @@ img{
  .hide-arrows .carousel-control-next-icon {
     display: none;
     visibility: hidden;
-}
+  }
+  ::ng-deep.carousel-control-prev-icon {
+    display: none;
+  }
+  ::ng-deep.carousel-control-next-icon {
+    display: none;
+  }
 
   .gametext{
     height: 80px; 
@@ -163,7 +171,7 @@ img{
   }
 
   .game_accordion img{
-    height: 250px;
+    height: 280px;
   }
 
 
@@ -186,14 +194,149 @@ img{
     margin-left: 3px;
     display: none;
   }
+  .col-md-3 {
+    margin-left: -6%;
+}
 
+  @media only screen and (max-width: 600px) {
 
-  
-  @media only screen and (min-width: 600px) {
+    .overlay-txt {
+      top: 60%;
+      left: 40%;
+      font-size: 16px;
+      text-align: center;
+  } 
+  .overlay-text {
+    top: 50%;
+    left: 51%;
+    font-size: 15px;
+    text-align: center;
+  }
+  .overlay-txts {
+    top: 60%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+  }
+  .carousel   img {
+    max-height: 300px;
+    }
+  .anchor {
+    margin: 5% 0 3% 10%;
+  }
   .overlazparagraphs {
-    margin: 50px 60px;
-}
-.larger {
-  font-size: 28px;
-}
+    margin: 0px 20px 0 20px;
+  }
+  .larger {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .smaller {
+    top: 63%;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 200;
+  }
+  .gamebtns {
+    margin-left: 4%;
+    margin-bottom: 5px;
+  }
+  .gametext p {
+    margin: 0px;
+  }
+  .game_accordion img{
+    height: 320px;
+    width: 330px;
+  }
+  ::ng-deep.carousel-control-prev-icon {
+    margin-right: 60%;
+    background-color: #0dcaf061;
+  }
+  ::ng-deep.carousel-control-next-icon {
+    margin-left: 60%;
+    background-color: #0dcaf061;
+  }
+
+  }
+ 
+  @media only screen and (min-width: 600px) {
+  .larger {
+    font-size: 28px;
+  }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width:768px){
+    .overlazparagraphs {
+      margin: 50px 100px;
+    }
+    .overlay-text {
+      left: 48%;
+      font-size: 32px;
+    }
+    .overlay-txt{
+      font-size: 32px;
+    }
+    .larger{
+      top: 70%;
+    }
+    .smaller {
+      top: 74%;
+      font-size: 16px;
+    }
+    .anchor {
+      display: inline-block;
+    }
+    .gamebtns {
+      margin-left: 25%;
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+    .flexalign {
+      height: 240px;
+    }
+    .gametext {
+      margin: 0 -4px;
+      // height: 120px;
+      }
+      .gametext   p{
+        margin-top: 0px;
+      }
+      .col-md-3 {
+        margin-left: 0;
+    }
+    .game_accordion   img {
+      height: 250px;
+    }
+
+    ::ng-deep.carousel-control-prev-icon {
+      background-color: #0dcaf061;
+    }
+    ::ng-deep.carousel-control-next-icon {
+      background-color: #0dcaf061;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 992px) {
+    .gamebtns {
+      margin-left: 30%;
+  }
+
+  }
+  @media only screen and (min-width: 993px) and (max-width: 1200px) {
+      .smaller {
+        top: 71%;
+    }
+    .larger{
+      top: 65%;
+    }
+  }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1201px) {
+      .smaller {
+        top: 71%;
+    }
+    .larger{
+      top: 65%;
+    }
   }

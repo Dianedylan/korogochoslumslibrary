@@ -23,8 +23,11 @@ export class DonationdialogComponent implements OnInit {
    donationSelected: number | undefined | string = '';
    amount = 0;
    isCreditCardPayment: boolean = true;
+   creditCardDetails : any;
+   detailsSent: boolean = false;
 
    @ViewChild('paymentRef', {static:true}) paymentRef!: ElementRef;
+   @Output() creditCardDetailsEmitter: EventEmitter<any> = new EventEmitter<any>();
   
   constructor(
     private _fb: FormBuilder,
@@ -60,7 +63,7 @@ export class DonationdialogComponent implements OnInit {
     this.donorForm.patchValue(this.data);
     this.cardForm.patchValue(this.data);
 
-    console.log('paypal integrations', window.paypal.buttons);
+    // console.log('paypal integrations', window.paypal.buttons);
     this.amount = this.selectedAmount;
     
     paypal.Buttons(
@@ -102,6 +105,9 @@ export class DonationdialogComponent implements OnInit {
           return actions.order.capture().then((details:any) =>{
             this._sweetAlerts.showSuccessAlert("Amount sent successfully!"); 
             console.log("paypal details",details);
+            this.creditCardDetails = details;
+            this.creditCardDetailsEmitter.emit(this.creditCardDetails);
+            this._dialogRef.close(true);
           });
         },
         onError: (error:any) => {
@@ -113,36 +119,36 @@ export class DonationdialogComponent implements OnInit {
     ).render(this.paymentRef.nativeElement);
   }
 
-
+  // creditCardDetails = details;
+  
 
   onFormSubmit() {
     if (this.donorForm.valid) {
-      this._donateService.addDonationDetails(this.donorForm.value).subscribe( res => {
+      // const donationData = { 
         
-            console.log('valuesss',[res]);
-            this._sweetAlerts.showSuccessAlert("Donation sent successfully!");
-            this._dialogRef.close(true);
-          },
-          
-          err => {
-            console.error(err);
-          },);
-      }
-    }else () {
-      this._donateService.addCardDetails(this.cardForm.value).subscribe( res => {
+      //   creditCardDetails: this.creditCardDetails,
+      //   // ...this.donorForm.value,
+      // };
+
+      this._donateService.addDonationDetails(this.donorForm.value).subscribe({ 
+        next: (res) => {
+        console.log('Your details sent successfully:', res);
+        this._sweetAlerts.showSuccessAlert("Your details  sent successfully!, Please proceed to donate");
+        this.detailsSent = true; 
+        this.donorForm.reset();
         
-            console.log('valuesss',[res]);
-            this._sweetAlerts.showSuccessAlert("Amount sent successfully!");
-            this._dialogRef.close(true);
-          },
+        // this._dialogRef.close(true);
+      },
           
-          err => {
-            console.error(err);
-          },);
-      }
+        error: console.log
+        
+      });
+    }
+  }
+    
 
 
-    showRadioSet: number = 1;
+  showRadioSet: number = 1;
   selectedOption1: string | null = null;
   selectedOption2: string | null = null;
 

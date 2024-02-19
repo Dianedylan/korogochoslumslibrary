@@ -26,7 +26,7 @@ const routes: Routes = [
       //   path:'whatyoucando/:name3' , component: ProgramComponent
       // },
       {
-        path: 'whatyoucando/donate' , component: DonateComponent
+        path: 'donate' , component: DonateComponent
       },
       {
         path: 'whatyoucando/volunteer' , component: VolunteeringComponent

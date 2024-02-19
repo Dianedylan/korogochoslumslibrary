@@ -2,7 +2,7 @@
 
 .container {
     top: -10px;
-    left: -20px;
+    // left: -20px;
 }
 .card{
     // position: fixed;
@@ -16,22 +16,6 @@
     object-fit: cover;
 }
 
-// .overlay-text{
-//     top:16%;
-//     left:45%;
-//     transform: translate(-40%, -40%);
-//     // color:rgb(22, 205, 221);
-//     color: #052725;
-// }
-// .overlay-txt{
-//     top: 25%;
-//     left:45%;
-//     transform: translate(-30%, -30%);
-//     font-size: 36px;
-//     color:rgb(113, 188, 185);
-//     // color: rgb(153, 187, 186);
-//     // color:cadetblue;
-// }
 .Piclayout{
     max-height: 500px;
     // background:  url('../../../assets/') center/cover no-repeat;
@@ -86,4 +70,39 @@ a, abbr, acronym, address, applet, b, big, body, center, cite, code, dd, del, df
     -webkit-text-size-adjust: 100%;
     vertical-align: baseline;
     background: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .motto{
+        margin-top: 1%;
+    }
+    .centeralignment img{
+        height: 240px !important;
+    }
+    .Piclayout  img {
+        width: 100%;
+        margin: 8px 0 0 0 ;
+        padding: 5px;
+    }
+    blockquote{
+        margin: 20px 0 10px 40px;
+    }
+    .Piclayout{
+        flex-direction: row !important;
+    }
+    .centeralignment {
+        font-size: 12px;
+    }
+     .card{
+        max-height: 250px;
+    }
+ 
+
+}
+@media only screen and (min-width: 601px) and (max-width:768px){
+    .Piclayout img {
+        width: 80%;
+        margin: 10% 10% 10% 10%;
+        padding: 15px;
+    }
 }

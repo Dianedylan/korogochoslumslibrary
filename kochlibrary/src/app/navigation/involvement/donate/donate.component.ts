@@ -41,43 +41,66 @@ export class DonateComponent implements OnInit {
       {id: 2, amount: 85},
       {id: 3, amount: 120},
       {id: 4, amount: 250},
+      {id: 1, amount: 1},
       // {id: 5, amount: "other"},
     ];
     this.donationSelected = 0;
   }
 
   isDonateFormOpen: boolean = true;
+  moreDetails : any;
 
   openDonateForm(){
     this.isDonateFormOpen = false;
       const dialogRef = this._dialog.open(DonationdialogComponent,{width:"60%", height:"95%"});
+      
+      dialogRef.componentInstance.creditCardDetailsEmitter.subscribe((creditCardDetails: any) => {
+        console.log('Received credit card details in parent component:', creditCardDetails);
+        this.moreDetails = creditCardDetails;
+        this.processDonationData(this.moreDetails);
+      });
+
       dialogRef.afterClosed().subscribe({
-        next: (val) => {
-          if (val) {
-            console.log(val);
-            this.getDonorsList();
+        next: (res) => { // Receive donorForm values from the dialog
+          if (res) {
+            console.log('Received donorForm values from the dialog',res);
+            // this.processDonationData({ donationData }); // Process the received donationData
           }
         this.isDonateFormOpen = true;
         },
 
       });
   }
+    // to process the received donation data
+    processDonationData(moreDetails: any): void {
+      // console.log("Received donation data:", donationData);
+      this._donateService.saveDonationData(moreDetails).subscribe({
+        next: (response: any) => {
+          console.log("Donation data saved:", response);
+          this.getDonorsList(); // Refresh donor list after donation data is saved
+        },
+        error: (error: any) => {
+          console.error("Error saving donation data:", error);
+          this._sweetAlerts.showErrorAlert("An error occurred while saving donation data!, Please try again");
+        }
+      });
+    }
   
 
-  getDonorsList() {
-    this._donateService.getDonorList().subscribe({
-      next: (res) => {
-        console.log('donors',res);
-  
-        this.dataSource = new MatTableDataSource(res);
-        console.log('donorresults',res[0]);
-        
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      },
-      error: console.log
-    });
-  }
+    getDonorsList() {
+      this._donateService.getDonorList().subscribe({
+        next: (res) => {
+          console.log('donors',res);
+    
+          this.dataSource = new MatTableDataSource(res);
+          console.log('gettingdonorresults',res[0]);
+          
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+        },
+        error: console.log
+      });
+    }
  
   onAmountSelected(selectedAmount: number) {
     this._contactService.setSelectedAmount(selectedAmount);
