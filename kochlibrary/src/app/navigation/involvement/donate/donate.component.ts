@@ -45,38 +45,38 @@ export class DonateComponent implements OnInit {
       // {id: 5, amount: "other"},
     ];
     this.donationSelected = 0;
-    this.customAmount = 0;
+    this.customAmount;
   }
 
   isDonateFormOpen: boolean = true;
   moreDetails : any;
 
-  openDonateForm(){
-    this.isDonateFormOpen = false;
-      const dialogRef = this._dialog.open(DonationdialogComponent,{
-        width:"60%", 
-        height:"95%",
-        data: { customAmount: this.customAmount }
-      });
-      
-      
-      dialogRef.componentInstance.creditCardDetailsEmitter.subscribe((creditCardDetails: any) => {
-        console.log('Received credit card details in parent component:', creditCardDetails);
-        this.moreDetails = creditCardDetails;
-        this.processDonationData(this.moreDetails);
-      });
+    openDonateForm(){
+      this.isDonateFormOpen = false;
+        const dialogRef = this._dialog.open(DonationdialogComponent,{
+          width:"60%", 
+          height:"95%",
+          data: { customAmount: this.customAmount }
+        });
+        
+        
+        dialogRef.componentInstance.creditCardDetailsEmitter.subscribe((creditCardDetails: any) => {
+          console.log('Received credit card details in parent component:', creditCardDetails);
+          this.moreDetails = creditCardDetails;
+          this.processDonationData(this.moreDetails);
+        });
 
-      dialogRef.afterClosed().subscribe({
-        next: (res) => { // Receive donorForm values from the dialog
-          if (res) {
-            console.log('Received donorForm values from the dialog',res);
-            // this.processDonationData({ donationData }); // Process the received donationData
-          }
-        this.isDonateFormOpen = true;
-        },
+        dialogRef.afterClosed().subscribe({
+          next: (res) => { // Receive donorForm values from the dialog
+            if (res) {
+              console.log('Received donorForm values from the dialog',res);
+              // this.processDonationData({ donationData }); // Process the received donationData
+            }
+          this.isDonateFormOpen = true;
+          },
 
-      });
-  }
+        });
+    }
     // to process the received donation data
     processDonationData(moreDetails: any): void {
       // console.log("Received donation data:", donationData);
@@ -112,12 +112,12 @@ export class DonateComponent implements OnInit {
       this._contactService.setSelectedAmount(customAmount);
     }    
  
-  onAmountSelected(selectedAmount: number|string) {
-    if (selectedAmount === 'other') {
-      this._contactService.setSelectedAmount(this.customAmount);
-    } else {
-      this._contactService.setSelectedAmount(+selectedAmount);
-    }  
-  }
+    onAmountSelected(selectedAmount: number|string) {
+      if (selectedAmount === 'other') {
+        this._contactService.setSelectedAmount(this.customAmount);
+      } else {
+        this._contactService.setSelectedAmount(+selectedAmount);
+      }  
+    }
 
 }

@@ -48,16 +48,11 @@ export class HeaderComponent {
     this.route.params.subscribe(
       (params:Params)=>{
         // this.whatonecando.name = params['name'];
-        this.volunteer.name2 = params['name2'];
-        this.fundraise.name3 = params['name3'];
+        this.volunteer = params['name2'];
+        this.fundraise = params['name3'];
       }
     );
     
-    // this.route.fragment.subscribe(fragment => {
-    //   if (fragment) {
-    //     this.scrollToElement(fragment);
-    //   }
-    // });
   }
   
 
