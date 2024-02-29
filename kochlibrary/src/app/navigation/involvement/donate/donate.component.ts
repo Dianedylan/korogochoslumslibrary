@@ -18,7 +18,7 @@ import { DonationService } from 'src/app/sharedServices/donation.service';
 export class DonateComponent implements OnInit {
   donations: Donation[] = [];
   donationSelected: number | undefined | string = '' ;
-  customAmount: number | undefined;
+  customAmount!: number;
 
   dataSource!: MatTableDataSource<any>;
 
@@ -41,10 +41,11 @@ export class DonateComponent implements OnInit {
       {id: 2, amount: 85},
       {id: 3, amount: 120},
       {id: 4, amount: 250},
-      {id: 1, amount: 1},
+      // {id: 1, amount: 1},
       // {id: 5, amount: "other"},
     ];
     this.donationSelected = 0;
+    this.customAmount = 0;
   }
 
   isDonateFormOpen: boolean = true;
@@ -52,7 +53,12 @@ export class DonateComponent implements OnInit {
 
   openDonateForm(){
     this.isDonateFormOpen = false;
-      const dialogRef = this._dialog.open(DonationdialogComponent,{width:"60%", height:"95%"});
+      const dialogRef = this._dialog.open(DonationdialogComponent,{
+        width:"60%", 
+        height:"95%",
+        data: { customAmount: this.customAmount }
+      });
+      
       
       dialogRef.componentInstance.creditCardDetailsEmitter.subscribe((creditCardDetails: any) => {
         console.log('Received credit card details in parent component:', creditCardDetails);
@@ -101,9 +107,17 @@ export class DonateComponent implements OnInit {
         error: console.log
       });
     }
+
+    onCustomAmountChange(customAmount: number) {
+      this._contactService.setSelectedAmount(customAmount);
+    }    
  
-  onAmountSelected(selectedAmount: number) {
-    this._contactService.setSelectedAmount(selectedAmount);
+  onAmountSelected(selectedAmount: number|string) {
+    if (selectedAmount === 'other') {
+      this._contactService.setSelectedAmount(this.customAmount);
+    } else {
+      this._contactService.setSelectedAmount(+selectedAmount);
+    }  
   }
 
 }

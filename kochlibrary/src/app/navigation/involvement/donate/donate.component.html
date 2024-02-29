@@ -13,16 +13,15 @@
                          <!-- [opened]="true" -->
             
                         <div style="width: 100%;" class="selectpanel">
-                            <mat-select placeholder="Select amount" class="amount-list" [(ngModel)]="donationSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAmountSelected($event)" >
+                            <div class="otheramount">
+                            <input *ngIf="donationSelected === 'other'" matInput type="number" placeholder="Enter amount eg.500" [(ngModel)]="customAmount" [ngModelOptions]="{standalone: true}" (ngModelChange)="onCustomAmountChange($event)"> 
+                             </div>
+                            <mat-select placeholder="Select amount" class="amount-list" [(ngModel)]="donationSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAmountSelected($event)" *ngIf="donationSelected !== 'other'">
                             <mat-option class="amount-option active" *ngFor="let donation of donations" [value]="donation.amount">{{donation.amount}}</mat-option>
                             <mat-option class="amount-option active" value="other">Other</mat-option>
-                            <div>
-                                <input *ngIf="donationSelected === 'other'" matInput type="number" placeholder="Enter amount" [(ngModel)]="customAmount">
-                            </div>
+
                             </mat-select>
 
-                    
-                        
                         </div>
                     </div>
                   

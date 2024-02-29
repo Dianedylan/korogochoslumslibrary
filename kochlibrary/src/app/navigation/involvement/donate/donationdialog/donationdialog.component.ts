@@ -21,6 +21,7 @@ export class DonationdialogComponent implements OnInit {
    selectedAmount!: number;
    donations: Donation[] = [];
    donationSelected: number | undefined | string = '';
+  //  customAmount: number | undefined;
    amount = 0;
    isCreditCardPayment: boolean = true;
    creditCardDetails : any;
@@ -37,11 +38,11 @@ export class DonationdialogComponent implements OnInit {
     private _dialogRef: MatDialogRef<DonationdialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { 
-    this._contactService.selectedAmount$.subscribe((amount) => {
-    this.selectedAmount = amount;
-    console.log('this selected  amount', this.selectedAmount);
-    
-  });
+    // this._contactService.selectedAmount$.subscribe((amount) => {
+    //   this.selectedAmount = amount;
+    //   console.log('this selected amount', this.selectedAmount);
+    // });
+    // this._contactService.setSelectedAmount(this.selectedAmount);
   
 }
      
@@ -60,11 +61,15 @@ export class DonationdialogComponent implements OnInit {
   });
 
   ngOnInit() {
+ 
     this.donorForm.patchValue(this.data);
     this.cardForm.patchValue(this.data);
 
-    // console.log('paypal integrations', window.paypal.buttons);
-    this.amount = this.selectedAmount;
+    this._contactService.selectedAmount$.subscribe((amount) => {
+      this.selectedAmount = amount;
+      console.log('this selected amount', this.selectedAmount);
+      this.amount = this.selectedAmount; // Update amount when selectedAmount changes
+    });
     
     paypal.Buttons(
       {
@@ -122,29 +127,29 @@ export class DonationdialogComponent implements OnInit {
   // creditCardDetails = details;
   
 
-  onFormSubmit() {
-    if (this.donorForm.valid) {
-      // const donationData = { 
-        
-      //   creditCardDetails: this.creditCardDetails,
-      //   // ...this.donorForm.value,
-      // };
-
-      this._donateService.addDonationDetails(this.donorForm.value).subscribe({ 
-        next: (res) => {
-        console.log('Your details sent successfully:', res);
-        this._sweetAlerts.showSuccessAlert("Your details  sent successfully!, Please proceed to donate");
-        this.detailsSent = true; 
-        this.donorForm.reset();
-        
-        // this._dialogRef.close(true);
-      },
+    onFormSubmit() {
+      if (this.donorForm.valid) {
+        // const donationData = { 
           
-        error: console.log
-        
-      });
+        //   creditCardDetails: this.creditCardDetails,
+        //   // ...this.donorForm.value,
+        // };
+
+        this._donateService.addDonationDetails(this.donorForm.value).subscribe({ 
+          next: (res) => {
+          console.log('Your details sent successfully:', res);
+          this._sweetAlerts.showSuccessAlert("Your details  sent successfully!, Please proceed to donate");
+          this.detailsSent = true; 
+          this.donorForm.reset();
+          
+          // this._dialogRef.close(true);
+        },
+            
+          error: console.log
+          
+        });
+      }
     }
-  }
     
 
 
@@ -152,25 +157,25 @@ export class DonationdialogComponent implements OnInit {
   selectedOption1: string | null = null;
   selectedOption2: string | null = null;
 
-  radioSet2Options = [
-    { label: 'MONTHLY', value: 'per month' },
-    { label: 'HALF YEARLY', value: 'every 6 months' },
-    { label: 'ANNUALLY', value: 'per year' }
-  ];
+    radioSet2Options = [
+      { label: 'MONTHLY', value: 'per month' },
+      { label: 'HALF YEARLY', value: 'every 6 months' },
+      { label: 'ANNUALLY', value: 'per year' }
+    ];
 
-  showSet1() {
-    this.showRadioSet = 1;
-  }
+    showSet1() {
+      this.showRadioSet = 1;
+    }
 
-  showSet2() {
-    this.showRadioSet = 2;
-  }
+    showSet2() {
+      this.showRadioSet = 2;
+    }
 
-  onAmountSelected(selectedAmount: number) {
-    this._contactService.setSelectedAmount(selectedAmount);
-  }
+    onAmountSelected(selectedAmount: number): void {
+      this._contactService.setSelectedAmount(selectedAmount);
+    }
   
-  selectedOption: string = "option1";
+    selectedOption: string = "option1";
 
 
 

@@ -35,7 +35,7 @@ export class LandingpageComponent {
   ngOnInit() {
     setInterval(() => {
       this.nextSlide();
-    }, 20000);
+    }, 15000);
   }
 
   nextSlide() {

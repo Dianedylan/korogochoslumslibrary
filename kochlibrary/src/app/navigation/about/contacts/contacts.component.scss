@@ -4,16 +4,12 @@
 
 
 mat-card{
-    margin-top: 8%;
+    margin-top: 14%;
     border-left: none !important;
 }
 .centeralignment{
     text-align: start;
-    margin: 0 0 10px 6%;
-}
-.centeralignment[_ngcontent-ng-c2393349527] {
-    text-align: center;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 2%;
 }
 a{
     text-decoration: none;
@@ -22,10 +18,8 @@ a{
 a:hover{
     color: #73c1cf;
 }
-.mat-mdc-form-field{
-    // display: block !important;
-    // width: 90% !important;
-    // height: 60px !important;
+.mat-mdc-form-field {
+    width: 100%;
     margin-right: 20px !important;
 }
 h5{
@@ -33,9 +27,14 @@ h5{
     font-size: large;
     margin-bottom: 5%;
 }
-.borderline{
-    // box-sizing: border-box;
-    // box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+.borderline {
     border: 1px solid #e0e3e3;
-    padding: 7% 0 0 4%;
+    padding: 7% 1% 1% 1%;
 }
+@media only screen and (max-width: 600px){
+    mat-card{
+        margin-top: 30%;
+        border-left: none !important;
+    }
+    
+  }

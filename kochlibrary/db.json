@@ -317,6 +317,79 @@
           "method": "GET"
         }
       ]
+    },
+    {
+      "id": "2XM960783U688504Y",
+      "intent": "CAPTURE",
+      "status": "COMPLETED",
+      "purchase_units": [
+        {
+          "reference_id": "default",
+          "amount": {
+            "currency_code": "USD",
+            "value": "1.00"
+          },
+          "payee": {
+            "email_address": "sb-j782229504739@business.example.com",
+            "merchant_id": "8GG9Z47RUFEAL"
+          },
+          "soft_descriptor": "PAYPAL *TEST STORE",
+          "shipping": {
+            "name": {
+              "full_name": "dee gat"
+            },
+            "address": {
+              "address_line_1": "656",
+              "admin_area_2": "Nairobi",
+              "admin_area_1": "Nairobi",
+              "postal_code": "00100",
+              "country_code": "KE"
+            }
+          },
+          "payments": {
+            "captures": [
+              {
+                "id": "2HR26943JA832871W",
+                "status": "COMPLETED",
+                "amount": {
+                  "currency_code": "USD",
+                  "value": "1.00"
+                },
+                "final_capture": true,
+                "seller_protection": {
+                  "status": "ELIGIBLE",
+                  "dispute_categories": [
+                    "ITEM_NOT_RECEIVED",
+                    "UNAUTHORIZED_TRANSACTION"
+                  ]
+                },
+                "create_time": "2024-02-20T06:22:31Z",
+                "update_time": "2024-02-20T06:22:31Z"
+              }
+            ]
+          }
+        }
+      ],
+      "payer": {
+        "name": {
+          "given_name": "dee",
+          "surname": "gat"
+        },
+        "email_address": "dianagatwiriikiamba@gmail.com",
+        "payer_id": "HCFFNMTBWLHEW",
+        "address": {
+          "country_code": "KE"
+        }
+      },
+      "create_time": "2024-02-20T06:22:14Z",
+      "update_time": "2024-02-20T06:22:31Z",
+      "links": [
+        {
+          "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2XM960783U688504Y",
+          "rel": "self",
+          "method": "GET"
+        }
+      ]
     }
   ]
 }
