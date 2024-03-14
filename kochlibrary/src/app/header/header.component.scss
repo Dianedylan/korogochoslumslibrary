@@ -76,13 +76,19 @@
 
   
   #fh5co-primary-menu a:hover {
-    color: #ff6600; /* Adjust the hover color as needed */
+    color: #ff6600;
   }
   .nav-header.scrolled-up #fh5co-primary-menu a{
     color: black;
   }  
   .nav-header.scrolled-up .hicon{
     color: black;
+  }
+  .nav-header.scrolled-up .hicon:hover{
+    color: #ff6600;
+  }
+  .nav-header.scrolled-up #fh5co-primary-menu a:hover {
+    color: #ff6600; 
   }
   .nav-header.scrolled-up #fh5co-logo a {
     color: #073c2c;
