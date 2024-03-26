@@ -1,30 +1,39 @@
 <div class="cardContainer">
     <div class="subtitle"><h2>Support Our Project</h2></div>
+    <mat-expansion-panel class="" [expanded]=false >
+        <mat-expansion-panel-header class="details_accordion_header">
+        </mat-expansion-panel-header>
+        <div>
+            <h2 style="color: #2c2b2b; text-align: center;">Help Us Track your Donation and to thank you.</h2>
+        </div>
+        <form [formGroup]="donorForm" (ngSubmit)="onFormSubmit()" class="donateform">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="eg. first name" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Surname</mat-label>
+                <input matInput placeholder="address" formControlName="surname">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone number</mat-label>
+                <input matInput placeholder="phone no." formControlName="phone">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+            </mat-form-field>
+          
+        <div mat-dialog-actions class="action">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!donorForm.valid">Send Details</button>
+        </div>
+        <div *ngIf="detailsSent"><p>Please proceed to donate below</p></div>
+        
+        </form>
 
-    <form [formGroup]="donorForm" (ngSubmit)="onFormSubmit()" class="donateform">
-        <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="eg. first name" formControlName="firstName">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Surname</mat-label>
-            <input matInput placeholder="address" formControlName="surname">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Phone number</mat-label>
-            <input matInput placeholder="phone no." formControlName="phone">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="email" formControlName="email">
-        </mat-form-field>
-      
-    <div mat-dialog-actions class="action">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!donorForm.valid">Send Details</button>
-    </div>
-    <div *ngIf="detailsSent"><p>Please proceed to donate below</p></div>
-    
-    </form>
+    </mat-expansion-panel>
+
+
     <div>
         <button mat-raised-button (click)="showSet1()" class="togglebtn" [ngClass]="{ 'active': showRadioSet === 1 }">Single</button>
         <button mat-raised-button (click)="showSet2()" class="togglebtn" [ngClass]="{ 'active': showRadioSet === 2 }">Periodic</button>

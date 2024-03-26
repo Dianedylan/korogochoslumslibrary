@@ -78,8 +78,8 @@ export class DonationdialogComponent implements OnInit {
   loadPayPalScript(environment: string) {
     const script = document.createElement('script');
     script.src = environment === 'sandbox' 
-      ? 'https://www.paypal.com/sdk/js?currency=USD&client-id=AbIdX-JJIrShswKO0aB7yh0_GfxiUnaLh7yb-vII8n8fKKf8yDWiTAKt33Gi9S1jSLhafO82TGjpq5Hc'
-      : 'https://www.paypal.com/sdk/js?currency=USD&client-id=YOUR_LIVE_CLIENT_ID';
+      ? 'https://www.paypal.com/sdk/js?currency=USD&client-id=Ab34xSADsdJc4aIynDDLmNBJYENaESUA9ZqoiW3vCur1e_UhZ5XvJMEeIb-s4DoIhiLHa95tQJeEMn4h'
+      : 'https://www.paypal.com/sdk/js?currency=USD&client-id=AWo3OJ81hcIUsSR3deC3xP9QPYJg3rkYItl7SAcmMy5vfD3Nk9wgzmRT1VKrsiLL1hvg-qY98u_0MXh3';
     script.onload = () => {
     
       paypal.Buttons(
