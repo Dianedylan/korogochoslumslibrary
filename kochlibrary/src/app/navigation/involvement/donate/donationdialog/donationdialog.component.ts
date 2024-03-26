@@ -64,6 +64,7 @@ export class DonationdialogComponent implements OnInit {
  
     this.donorForm.patchValue(this.data);
     this.cardForm.patchValue(this.data);
+    const environment = 'sandbox'; // Change this to 'live' for production
 
     this._contactService.selectedAmount$.subscribe((amount) => {
       this.selectedAmount = amount;
@@ -71,57 +72,69 @@ export class DonationdialogComponent implements OnInit {
       this.amount = this.selectedAmount; // Update amount when selectedAmount changes
     });
     
-    paypal.Buttons(
-      {
-        // style: {
-        //   layout: 'horizontal',
-        //   color: 'blue',
-        //   shape: 'rect',
-        //   label: 'paypal',
-        // },
-        createOrder: (data: any, actions: any): any => {
-          this.isCreditCardPayment = true;
-          if (this.isCreditCardPayment) {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    amount: {
-                      currency_code: 'USD',
-                      value: this.amount.toString(),
+    this.loadPayPalScript(environment);
+  }
+
+  loadPayPalScript(environment: string) {
+    const script = document.createElement('script');
+    script.src = environment === 'sandbox' 
+      ? 'https://www.paypal.com/sdk/js?currency=USD&client-id=AbIdX-JJIrShswKO0aB7yh0_GfxiUnaLh7yb-vII8n8fKKf8yDWiTAKt33Gi9S1jSLhafO82TGjpq5Hc'
+      : 'https://www.paypal.com/sdk/js?currency=USD&client-id=YOUR_LIVE_CLIENT_ID';
+    script.onload = () => {
+    
+      paypal.Buttons(
+        {
+          // style: {
+          //   layout: 'horizontal',
+          //   color: 'blue',
+          //   shape: 'rect',
+          //   label: 'paypal',
+          // },
+          createOrder: (data: any, actions: any): any => {
+            this.isCreditCardPayment = true;
+            if (this.isCreditCardPayment) {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        currency_code: 'USD',
+                        value: this.amount.toString(),
+                      },
                     },
-                  },
-                ],
-              });
-            }else {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    amount: {
-                      currency_code: 'USD',
-                      value: this.amount.toString(),
+                  ],
+                });
+              }else {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        currency_code: 'USD',
+                        value: this.amount.toString(),
+                      },
                     },
-                  },
-                ],
-              });
-            }
-        },
-        
-        onApprove: (data:any, actions:any) => {
-          return actions.order.capture().then((details:any) =>{
-            this._sweetAlerts.showSuccessAlert("Amount sent successfully!"); 
-            console.log("paypal details",details);
-            this.creditCardDetails = details;
-            this.creditCardDetailsEmitter.emit(this.creditCardDetails);
-            this._dialogRef.close(true);
-          });
-        },
-        onError: (error:any) => {
-          this._sweetAlerts.showErrorAlert("An error occurred, please try again!");
-          console.log(error);
+                  ],
+                });
+              }
+          },
           
+          onApprove: (data:any, actions:any) => {
+            return actions.order.capture().then((details:any) =>{
+              this._sweetAlerts.showSuccessAlert("Amount sent successfully!"); 
+              console.log("paypal details",details);
+              this.creditCardDetails = details;
+              this.creditCardDetailsEmitter.emit(this.creditCardDetails);
+              this._dialogRef.close(true);
+            });
+          },
+          onError: (error:any) => {
+            this._sweetAlerts.showErrorAlert("An error occurred, please try again!");
+            console.log(error);
+            
+          }
         }
-      }
-    ).render(this.paymentRef.nativeElement);
+      ).render(this.paymentRef.nativeElement);
+    };
+    document.body.appendChild(script);
   }
 
   // creditCardDetails = details;

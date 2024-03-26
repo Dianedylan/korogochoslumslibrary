@@ -1,0 +1,25 @@
+# Stage 1: Build the JSON server
+FROM node:18 AS json-server-builder
+
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the JSON data file
+COPY db.json .
+
+# Stage 2: Run the JSON server
+FROM node:18
+
+WORKDIR /app
+
+# Copy the JSON server app from the previous stage
+COPY --from=json-server-builder /app .
+
+# Expose the port
+EXPOSE 3000
+
+# Command to run the JSON server
+CMD ["json-server", "--watch", "db.json"]

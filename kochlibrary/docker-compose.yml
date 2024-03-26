@@ -1,0 +1,47 @@
+# version: '3.8'
+# services:
+#   angular-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - '4200:4200' # Change port as needed
+#     volumes:
+#       - ./src:/app/src
+#     depends_on:
+#       - json-server
+#     environment:
+#       - API_URL=http://json-server:3000
+
+#   json-server:
+#     image: typicode/json-server
+#     volumes:
+#       - ./db.json:/data/db.json
+#     ports:
+#       - '3000:3000'
+#     command: json-server --watch /data/db.json
+
+
+version: '3.8'
+
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4200:4200'  
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - json-server
+    environment:
+      - JSON_SERVER_URL=http://json-server:3000
+
+  json-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.jsonserver
+    ports:
+      - '3000:3000'
+
